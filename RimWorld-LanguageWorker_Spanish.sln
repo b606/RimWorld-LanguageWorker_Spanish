@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RimWorld_LanguageWorker_Spanish", "RimWorld_LanguageWorker_Spanish\RimWorld_LanguageWorker_Spanish.csproj", "{229234B3-8586-45B5-AC75-EBEAC20B7106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RimWorld-LanguageWorker_Spanish_NUnitTest", "RimWorld-LanguageWorker_Spanish_NUnitTest\RimWorld-LanguageWorker_Spanish_NUnitTest.csproj", "{3601B1B7-6E17-433C-AB63-D76979ADCE24}"
+EndProject
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "LanguageWorker_Spanish_Mod", "LanguageWorker_Spanish_Mod\LanguageWorker_Spanish_Mod.mdproj", "{9EE74833-2CC4-40C4-86C7-F5D36A347BD0}"
+EndProject
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "ModPackaging", "ModPackaging\ModPackaging.mdproj", "{9540A63F-D293-4C93-B0A7-7B1F15A300F3}"
+EndProject
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "Archives", "Archives\Archives.mdproj", "{5B5C8002-6A77-486D-90D4-E25367C8A6C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Default|Any CPU = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{229234B3-8586-45B5-AC75-EBEAC20B7106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229234B3-8586-45B5-AC75-EBEAC20B7106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229234B3-8586-45B5-AC75-EBEAC20B7106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229234B3-8586-45B5-AC75-EBEAC20B7106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{229234B3-8586-45B5-AC75-EBEAC20B7106}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{229234B3-8586-45B5-AC75-EBEAC20B7106}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{3601B1B7-6E17-433C-AB63-D76979ADCE24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3601B1B7-6E17-433C-AB63-D76979ADCE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3601B1B7-6E17-433C-AB63-D76979ADCE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3601B1B7-6E17-433C-AB63-D76979ADCE24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3601B1B7-6E17-433C-AB63-D76979ADCE24}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{3601B1B7-6E17-433C-AB63-D76979ADCE24}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{9EE74833-2CC4-40C4-86C7-F5D36A347BD0}.Debug|Any CPU.ActiveCfg = Default|Any CPU
+		{9EE74833-2CC4-40C4-86C7-F5D36A347BD0}.Debug|Any CPU.Build.0 = Default|Any CPU
+		{9EE74833-2CC4-40C4-86C7-F5D36A347BD0}.Release|Any CPU.ActiveCfg = Default|Any CPU
+		{9EE74833-2CC4-40C4-86C7-F5D36A347BD0}.Release|Any CPU.Build.0 = Default|Any CPU
+		{9EE74833-2CC4-40C4-86C7-F5D36A347BD0}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{9EE74833-2CC4-40C4-86C7-F5D36A347BD0}.Default|Any CPU.Build.0 = Default|Any CPU
+		{9540A63F-D293-4C93-B0A7-7B1F15A300F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9540A63F-D293-4C93-B0A7-7B1F15A300F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9540A63F-D293-4C93-B0A7-7B1F15A300F3}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{5B5C8002-6A77-486D-90D4-E25367C8A6C3}.Debug|Any CPU.ActiveCfg = Default|Any CPU
+		{5B5C8002-6A77-486D-90D4-E25367C8A6C3}.Debug|Any CPU.Build.0 = Default|Any CPU
+		{5B5C8002-6A77-486D-90D4-E25367C8A6C3}.Release|Any CPU.ActiveCfg = Default|Any CPU
+		{5B5C8002-6A77-486D-90D4-E25367C8A6C3}.Release|Any CPU.Build.0 = Default|Any CPU
+		{5B5C8002-6A77-486D-90D4-E25367C8A6C3}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{5B5C8002-6A77-486D-90D4-E25367C8A6C3}.Default|Any CPU.Build.0 = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03CC3F84-31DC-497D-A71A-110CADDDC7A6}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.ChangeLogPolicy = $1
+		$1.UpdateMode = ProjectRoot
+		$0.TextStylePolicy = $2
+		$2.FileWidth = 80
+		$2.scope = text/x-csharp
+		$2.TabWidth = 2
+		$2.IndentWidth = 2
+		$2.inheritsSet = null
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.FileWidth = 80
+		$4.TabWidth = 2
+		$4.IndentWidth = 2
+		$4.scope = text/plain
+		$0.TextStylePolicy = $5
+		$5.inheritsSet = null
+		$5.scope = application/config+xml
+		$0.XmlFormattingPolicy = $6
+		$6.inheritsSet = null
+		$6.scope = application/config+xml
+		$0.TextStylePolicy = $7
+		$7.inheritsSet = null
+		$7.scope = application/xml
+		$0.XmlFormattingPolicy = $8
+		$8.scope = application/xml
+		$0.StandardHeader = $9
+		$9.Text = @<code-header>\n  <author>${AuthorName}</author>\n  <copyright file="${FileName}" company="My Company Name">\n    Copyright (c) ${AuthorName} ${Year}\n  </copyright>\n  <license href="license.txt"></license>\n  <date>${Date}</date>\n  <summary>summary</summary>\n  <revisions>\n    <revision initials="b606">Created the file and class</revision>\n  </revisions>\n</code-header>\n
+		$0.TextStylePolicy = $10
+		$10.inheritsSet = null
+		$10.scope = text/html
+		version = 1.1.0
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ItemType>GenericProject</ItemType>
+    <ProjectGuid>{9EE74833-2CC4-40C4-86C7-F5D36A347BD0}</ProjectGuid>
+    <ReleaseVersion>1.1.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="About\About.xml" />
+    <None Include="README.md" />
+    <None Include="Assemblies\LanguageWorker_Spanish_Mod.dll" />
+    <None Include="Assemblies\0Harmony.dll" />
+    <None Include="Assemblies\0Harmony.xml" />
+    <None Include="Assemblies\LanguageWorker_Spanish_Mod.pdb" />
+    <None Include="About\Preview.png" />
+    <None Include="About\Preview.xcf" />
+    <None Include="Source\Images\Tribal-v1.0.1.png" />
+    <None Include="Source\Images\Elision-v1.0.0.png" />
+    <None Include="Source\Images\Planet-Settlemet-v1.0.1.png" />
+    <None Include="Source\Images\LWKR_Spanish_Mod_folders.png" />
+    <None Include="Source\Images\PawnKind.Label-v1.0.2.png" />
+    <None Include="Source\Images\LWKR_Spanish_Mod_banner.png" />
+    <None Include="Source\Images\Preview-1.1.0.png" />
+    <None Include="Source\Images\Caravan-TraderShio-v1.0.1.png" />
+    <None Include="Source\Images\QuestTitle-v1.0.1.png" />
+    <None Include="Source\Images\AnimalEpicene-1.0.3.png" />
+    <None Include="About\PublishedFileId.txt" />
+  </ItemGroup>
+  <ExcludedFiles>
+    <File>LanguageWorker_Spanish_Mod.mdproj</File>
+  </ExcludedFiles>
+</Project>

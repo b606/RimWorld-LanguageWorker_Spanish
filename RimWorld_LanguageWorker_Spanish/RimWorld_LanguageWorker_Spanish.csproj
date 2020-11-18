@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{229234B3-8586-45B5-AC75-EBEAC20B7106}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RimWorld_LanguageWorker_Spanish</RootNamespace>
+    <AssemblyName>LanguageWorker_Spanish_Mod</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <ReleaseVersion>1.1.0</ReleaseVersion>
+    <ModName>LanguageWorker_Spanish_Mod</ModName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\$(ModName)\Assemblies</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\$(ModName)\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' != 'Unix' ">
+		<ProgramFiles32>$(MSBuildProgramFiles32)</ProgramFiles32>
+		<ProgramFiles32 Condition=" '$(ProgramFiles32)' == '' ">$(ProgramFiles%28x86%29)</ProgramFiles32>
+		<ProgramFiles32 Condition=" '$(ProgramFiles32)' == '' AND 'AMD64' == '$(PROCESSOR_ARCHITECTURE)' ">$(ProgramFiles) (x86)</ProgramFiles32>
+		<ProgramFiles32 Condition=" '$(ProgramFiles32)' == '' ">$(ProgramFiles)</ProgramFiles32>
+    <RimWorldFolder>$(ProgramFiles32)\Steam\steamapps\common\RimWorld</RimWorldFolder>
+    <RimWorldReferences>$(RimWorldFolder)\RimWorldWin64_Data\Managed</RimWorldReferences>
+    <ModsFolder>$(RimWorldFolder)\Mods</ModsFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' == 'Unix' ">
+    <RimWorldFolder>$(HOME)\.steam\steam\steamapps\common\RimWorld</RimWorldFolder>
+    <RimWorldReferences>$(RimWorldFolder)\RimWorldLinux_Data\Managed</RimWorldReferences>
+    <ModsFolder>$(RimWorldFolder)\Mods</ModsFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldReferences)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(RimWorldReferences)\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>$(RimWorldReferences)\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>..\packages\Lib.Harmony.2.0.3\lib\net35\0Harmony.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LanguageWorker_Spanish.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatsLogger.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="StringExtension.cs" />
+    <Compile Include="LanguageWorker_Spanish_Debug.cs" />
+    <Compile Include="Patcher.cs" />
+    <Compile Include="RulesForPawnPatch.cs" />
+    <Compile Include="InspectionPatch.cs" />
+    <Compile Include="LanguageWorker_Mod.cs" />
+    <Compile Include="LoadedLanguagePatch.cs" />
+    <Compile Include="RulesForDefPatch.cs" />
+    <Compile Include="RulesForBodyPartRecordPatch.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  Other similar extension points exist, see Microsoft.Common.targets.
+  -->
+  <ItemGroup>
+    <ReadMeFile Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Target Name="UpdateModDocs">
+    <Message Text="Updating @(ReadMeFile)..." Importance="High" />
+    <Copy SourceFiles="@(ReadMeFile)" DestinationFolder="..\$(ModName)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="InstallModOnUnix">
+    <Message Text="Copying to $(ModsFolder)\$(AssemblyName)..." Importance="High" />
+    <Exec Command="cp --update -R &quot;..\$(ModName)\&quot; &quot;$(ModsFolder)\&quot; " />
+    <Exec Command="rm &quot;$(ModsFolder)\$(ModName)\$(ModName).mdproj&quot; " />
+  </Target>
+  <Target Name="InstallModOnWindows">
+    <Message Text="Copying to $(ModsFolder)\$(AssemblyName)..." Importance="High" />
+    <Exec Command="xcopy &quot;..\$(ModName)\&quot; &quot;$(ModsFolder)\$(ModName)\&quot; /y/s/h/e/k/f/c" />
+  </Target>
+  <Target Name="AfterBuild">
+    <CallTarget Targets="UpdateModDocs" />
+    <CallTarget Condition=" '$(OS)' == 'Unix' " Targets="InstallModOnUnix" />
+    <CallTarget Condition=" '$(OS)' != 'Unix' " Targets="InstallModOnWindows" />
+  </Target>
+</Project>

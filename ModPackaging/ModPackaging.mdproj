@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ItemType>PackagingProject</ItemType>
+    <ProjectGuid>{9540A63F-D293-4C93-B0A7-7B1F15A300F3}</ProjectGuid>
+    <Packages>
+      <Packages>
+        <Package>
+          <Builder>
+            <RootEntry>
+              <path>..\LanguageWorker_Spanish_Mod\LanguageWorker_Spanish_Mod.mdproj</path>
+            </RootEntry>
+            <targetFile>..\Archives\archives\LanguageWorker_Spanish_Mod.zip</targetFile>
+            <format>MonoDevelop.Projects.MSBuild.MSBuildFileFormatVS12</format>
+            <ctype>SourcesZipPackageBuilder</ctype>
+          </Builder>
+          <name>Mod Binaries</name>
+        </Package>
+      </Packages>
+    </Packages>
+    <ReleaseVersion>1.1.0</ReleaseVersion>
+  </PropertyGroup>
+</Project>

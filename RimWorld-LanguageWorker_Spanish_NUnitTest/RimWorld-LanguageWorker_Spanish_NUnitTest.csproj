@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3601B1B7-6E17-433C-AB63-D76979ADCE24}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RimWorldLanguageWorker_Spanish_NUnitTest</RootNamespace>
+    <AssemblyName>RimWorld-LanguageWorker_Spanish_NUnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ReleaseVersion>1.1.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' != 'Unix' ">
+		<ProgramFiles32>$(MSBuildProgramFiles32)</ProgramFiles32>
+		<ProgramFiles32 Condition=" '$(ProgramFiles32)' == '' ">$(ProgramFiles%28x86%29)</ProgramFiles32>
+		<ProgramFiles32 Condition=" '$(ProgramFiles32)' == '' AND 'AMD64' == '$(PROCESSOR_ARCHITECTURE)' ">$(ProgramFiles) (x86)</ProgramFiles32>
+		<ProgramFiles32 Condition=" '$(ProgramFiles32)' == '' ">$(ProgramFiles)</ProgramFiles32>
+    <RimWorldFolder>$(ProgramFiles32)\Steam\steamapps\common\RimWorld</RimWorldFolder>
+    <RimWorldReferences>$(RimWorldFolder)\RimWorldWin64_Data\Managed</RimWorldReferences>
+    <ModsFolder>$(RimWorldFolder)\Mods</ModsFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' == 'Unix' ">
+    <RimWorldFolder>$(HOME)\.steam\steam\steamapps\common\RimWorld</RimWorldFolder>
+    <RimWorldReferences>$(RimWorldFolder)\RimWorldLinux_Data\Managed</RimWorldReferences>
+    <ModsFolder>$(RimWorldFolder)\Mods</ModsFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldReferences)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(RimWorldReferences)\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>$(RimWorldReferences)\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NumberCaseResolverTest.cs" />
+    <Compile Include="ReplaceResolverTest.cs" />
+    <Compile Include="TestPostProcessed.cs" />
+    <Compile Include="TestToTitleCase.cs" />
+    <Compile Include="TestPluralize.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RimWorld_LanguageWorker_Spanish\RimWorld_LanguageWorker_Spanish.csproj">
+      <Project>{229234B3-8586-45B5-AC75-EBEAC20B7106}</Project>
+      <Name>RimWorld_LanguageWorker_Spanish</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
