@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>LanguageWorker_Spanish Mod</name>
+	<author>b606</author>
+  <url>https://github.com/b606/RimWorld-LanguageWorker_Spanish/</url>
+  <packageId>b606.LanguageWorkerSpanish.Mod</packageId>
+  <supportedVersions>
+    <li>1.0</li>
+    <li>1.1</li>
+    <li>1.2</li>
+  </supportedVersions>
+	<description>LanguageWorker_Spanish Mod améliore le français dans RimWorld.
+    
+Les modifications faites par ce mod concernent essentiellement la qualité de la traduction, qui sont impossibles à faire sans modifier le code C# du jeu. Ce mod est donc un complément du travail des traducteurs de Ludeon/RimWorld-fr.
+
+Le mod est focalisé sur les accords de mots, les règles de grammaire ou de typographie etc. Si vous avez l'œil averti, vous apprecierez les changements par-ci par-là. Des captures d'écran les illustrent dans le Wiki du mod, https://github.com/b606/RimWorld-LanguageWorker_Spanish/wiki. N'hésitez pas à remonter les suggestions, les problèmes ou bugs sur ce site.
+
+&lt;b&gt;Merci à&lt;/b&gt;
+Elevator89 pour le code initial, à Adirelle pour les premiers Regex, Pardeike pour libHarmony, et kiliak pour les tests.
+
+&lt;b&gt;Téléchargement&lt;/b&gt;
+Steam : https://github.com/b606/RimWorld-LanguageWorker_Spanish/releases/latest
+
+&lt;b&gt;Autre mod&lt;/b&gt;
+EdB Prepare Carefully [Français]
+Traduction en français de ce mod.
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081907934
+
+Numbers [Français]
+Traduction française du mod &lt;b&gt;Numbers&lt;/b&gt; 
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691155
+
+Numbers Trait AddOn [Français]
+Traduction française du mod &lt;b&gt;Numbers Trait AddOn&lt;/b&gt; 
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691905
+
+&lt;b&gt;Pour m'encourager&lt;/b&gt;
+- une petite pouce approbatrice
+- j'adore aussi le kofi https://ko-fi.com/b606at0116
+</description>
+</ModMetaData>

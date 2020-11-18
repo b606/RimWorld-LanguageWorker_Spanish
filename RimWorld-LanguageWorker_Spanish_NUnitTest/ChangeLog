@@ -1,0 +1,9 @@
+2020-11-18  b606  <7627533+b606@users.noreply.github.com>
+
+	* packages.config:
+	* TestPluralize.cs:
+	* TestToTitleCase.cs:
+	* TestPostProcessed.cs:
+	* ReplaceResolverTest.cs:
+	* NumberCaseResolverTest.cs: Initial commit
+

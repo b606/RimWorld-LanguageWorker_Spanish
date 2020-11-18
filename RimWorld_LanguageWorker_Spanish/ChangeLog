@@ -1,0 +1,17 @@
+2020-11-18  b606  <7627533+b606@users.noreply.github.com>
+
+	* Logger.cs:
+	* Patcher.cs:
+	* StatsLogger.cs:
+	* packages.config:
+	* InspectionPatch.cs:
+	* StringExtension.cs:
+	* RulesForDefPatch.cs:
+	* RulesForPawnPatch.cs:
+	* LanguageWorker_Mod.cs:
+	* LoadedLanguagePatch.cs:
+	* LanguageWorker_Spanish.cs:
+	* AssemblyInfo.cs:
+	* RulesForBodyPartRecordPatch.cs:
+	* LanguageWorker_Spanish_Debug.cs: Initial commit
+
