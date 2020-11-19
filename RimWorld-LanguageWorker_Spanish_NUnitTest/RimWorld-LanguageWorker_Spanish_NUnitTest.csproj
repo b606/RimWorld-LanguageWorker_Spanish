@@ -59,8 +59,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NumberCaseResolverTest.cs" />
-    <Compile Include="ReplaceResolverTest.cs" />
     <Compile Include="TestPostProcessed.cs" />
     <Compile Include="TestToTitleCase.cs" />
     <Compile Include="TestPluralize.cs" />

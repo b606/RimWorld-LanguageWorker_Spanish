@@ -1,3 +1,11 @@
+2020-11-19  b606  <7627533+b606@users.noreply.github.com>
+
+	* ReplaceResolverTest.cs:
+	* NumberCaseResolverTest.cs:
+	* RimWorld-LanguageWorker_Spanish_NUnitTest.csproj: Deleted
+	Elevator's Resolver methods : unused because this needs
+	special annotations in the official translation files.
+
 2020-11-18  b606  <7627533+b606@users.noreply.github.com>
 
 	* ChangeLog: Initial commit
