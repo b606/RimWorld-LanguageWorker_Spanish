@@ -1,5 +1,11 @@
 2020-11-19  b606  <7627533+b606@users.noreply.github.com>
 
+	* LanguageWorker_Spanish.cs: Updated LanguageWorker_Spanish :
+	WithIndefiniteArticle, WithDefiniteArticle, Pluralize,
+	PostProcess*, and the different patches.
+
+2020-11-19  b606  <7627533+b606@users.noreply.github.com>
+
 	* LanguageWorker_Spanish_Debug.cs: Deleted Elevator's Resolver
 	methods : unused because this needs special annotations in the
 	official translation files.

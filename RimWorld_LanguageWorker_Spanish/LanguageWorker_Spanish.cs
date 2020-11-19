@@ -28,155 +28,133 @@ namespace RimWorld_LanguageWorker_Spanish
 			//StopStatsLogging("LanguageWorker_Spanish", "LanguageWorker_Spanish");
 		}
 
-		// in plural, replace "ail" with "aux"
-		private static readonly HashSet<string> Exceptions_Plural_aux = new HashSet<string> {
-			"bail",
-			"corail",
-			"émail",
-			"gemmail",
-			"soupirail",
-			"travail",
-			"vantail",
-			"vitrail"
+		// TODO: in plural, these words get -es
+		private static readonly HashSet<string> Exceptions_Plural_es = new HashSet<string> {
+			"sí",
+			"no"
 		};
 
-		// lieu (fish) takes an "s", but does not exist in RimWorld
-		private static readonly HashSet<string> Exceptions_Plural_s = new HashSet<string> {
-			"bleu",
-			"émeu",
-			"landau",
-			"pneu",
-			"sarrau",
-			"bal",
-			"banal",
-			"fatal",
-			"final",
-			"festival"
+		// TODO: in plural, these words get -s
+		private static readonly HashSet<string> Exceptions_Plural_s = new HashSet<string>
+		{
+			//	"menú",
+			//	"popurrí"
 		};
 
-		// lieu (area) takes an "x", it exists in RimWorld (ex. lieu d'assemblage-crafting spot)
-		private static readonly HashSet<string> Exceptions_Plural_x = new HashSet<string> {
-			"bijou",
-			"caillou",
-			"chou",
-			"genou",
-			"hibou",
-			"joujou",
-			"pou",
-			"lieu"
+		// TODO: in plural, these words are invariant
+		private static readonly HashSet<string> Exceptions_Plural_invariant = new HashSet<string>
+		{
+				"yorkshire",
+				"molotov",
+				"pemmican",
+				"pekoe",
+				"tórax",
+				"protórax",
+				"bum",			// for ratas-bum
+				"ciempiés",
+				"análisis", // not currently in the game
+				"jueves"		// and others (not in the game) 
 		};
 
-		// Words with aspirated h do not get elision (list only words in RimWorld)
-		// Added no elision to "onze", "onzième" -- do not appear in RiWorld yet)
+		// TODO: Placeholder for words that do not get elision
 		private static readonly HashSet<string> Exceptions_No_Elision = new HashSet<string> {
-			"hache",
-			"hack",
-			"haine",
-			"hameau",
-			"hampe",
-			"hamster",
-			"hanche",
-			"hareng",
-			"haricot",
-			"harpe",
-			"hasard",
-			"hase", // "hases",
-      "hât", // "hâte", "hâtif", "hâtive", "hâtivement",
-      "haut", // "haute",
-      "héron",
-			"hérisson",
-			"hêtre",
-			"hibou",
-			"holding",
-			"homard",
-			"honte",
-			"horde",
-			"hors", // "hors-la-loi",
-      "houblon",
-			"huit",
-			"hunter",
-			"hurl", // "hurler", "hurle", "hurlé", "hurlement",
-      "husky",
-			"hutte",
-			"hyène",
-			"onz" // , "onze", "onzième"
+			//"hack",
+			//"holding",
+			//"hunter",
+      //"husky"
     };
 
+		// List of female epicen animals.
+		// Commented items have xxx_labelMale
 		private static readonly HashSet<string> PawnKind_FemaleOnly = new HashSet<string> {
-			"Boomalope",
-			"Gazelle",
-			"Megaspider",
-			"Ostrich",
-			"Tortoise"
-		};
-
-		private static readonly HashSet<string> PawnKind_MaleOnly = new HashSet<string>{
-			"Alphabeaver",
-			"Bear_Grizzly",
+			"Alpaca",
 			"Boomrat",
-			"Capybara",
-			"Caribou",
-			"Cassowary",
 			"Chinchilla",
 			"Cobra",
+			//"Cow",
+			"Gazelle",
+			"Goat",
+			"Hare",
+			"Iguana",
+			"Megaspider",
+			"Panther",
+			"Rat",
+			//"Sheep",
+			"Snowhare",
+			"Squirrel",
+			"Tortoise" //
+		};
+
+		// List of male epicen animals.
+		// Commented items have xxx_labelFemale
+		private static readonly HashSet<string> PawnKind_MaleOnly = new HashSet<string>{
+			"Alphabeaver",
+			//"Bear_Grizzly",
+			//"Bear_Polar",
+			"Bison",
+			"Boomalope",
+			"Cassowary",
+			//"Cat",
+			"Capybara",
+			"Caribou",
+			//"Chicken",
 			"Cougar",
+			//"Deer",
+			"Donkey",
 			"Dromedary",
+			"Duck",
+			"Elephant",
 			"Elk",
 			"Emu",
-			"Fox_Fennec",
+			//"Fox_Arctic",
+			//"Fox_Fennec",
+			"Fox_Red",
+			"Goose",
 			"GuineaPig",
+			//"Horse",
 			"Husky",
-			"Iguana",
+			"Ibex",
 			"LabradorRetriever",
 			"Lynx",
 			"Megascarab",
 			"Megasloth",
+			//"Monkey",
 			"Muffalo",
+			"Ostrich",
+			//"Pig",
 			"Raccoon",
 			"Rhinoceros",
 			"Spelopede",
-			"Squirrel",
 			"Thrumbo",
+			//"Turkey",
 			"Warg",
+			"WildBoar",
+			"Warg",
+			//"Wolf_Arctic",
+			//"Wolf_Timber",
+			"Yak",
 			"YorkshireTerrier"
 		};
 
 		// For ToTitleCase: No uppercase if in the middle of the string
-		// For Pluralize: Contains most of the prepositions (stopping test for compound words)
+		// For Pluralize: Contains most of the prepositions (these stop the pluralization for compound words)
+		// TODO: check if spanish typography is similar to french one.
 		private static HashSet<string> NonUppercaseWords = new HashSet<string>
 		{
-			"à", // "à la",
-			"au",
-			"avec",
-			"chez",
-			"dans",
-			"de", // "de la",
-			"des",
-			"dès",
-			"devant",
-			"du",
-			"en",
-			"entre",
-			"et",
-			"hors",
-			"jusqu'à",
-			"jusqu'au",
-			"jusque",
+			"a",		// "a la",
+			"de",		// "de la",
+			"del",
 			"la",
-			"le",
-			"les",
-			"lez",
-			"par",
-			"pour",
+			"el",
+			"por",
 			"post",
-			"sans",
-			"sur", // "sur le", "sur la",
-			"vers",
-			"van", // some foreign words
+			"van",	// some foreign words
 			"von"
 		};
 
-		// Some labels are usually in plural because of contexts
+		// Some labels are usually in plural because of contexts,
+		// however the in-game grammar engine treats them as singular (since it is an XXX_label not an XXX_labelPlural).
+		// The list below is used to patch RulesForDef (in FixRulesForDef) and FixRulesForBodyPartRecord (in FixRulesForBodyPartRecord)
 		private static readonly HashSet<string> DefLabel_InPlural = new HashSet<string> {
 		// ThingDef/Races_* tools..label
 			"griffes",
@@ -206,16 +184,14 @@ namespace RimWorld_LanguageWorker_Spanish
 
 		public override string WithIndefiniteArticle(string str, Gender gender, bool plural = false, bool name = false)
 		{
-      //Names don't get articles
-      if( name )
-        return str;
+			//Names don't get articles
+			if (name)
+				return str;
 
-      if( plural )
-        return (gender == Gender.Female ? "unas " : "unos ") + str;	
+			if (plural)
+				return (gender == Gender.Female ? "unas " : "unos ") + str;
 
-      else	
-
-        return (gender == Gender.Female ? "una " : "un ") + str;
+			return (gender == Gender.Female ? "una " : "un ") + str;
 		}
 
 		public override string WithDefiniteArticle(string str, Gender gender, bool plural = false, bool name = false)
@@ -223,14 +199,12 @@ namespace RimWorld_LanguageWorker_Spanish
 			if (str.NullOrEmpty())
 				return str;
 
-		//Names don't get articles
-		if( name )
-			return str;
+			//Names don't get articles
+			if (name)
+				return str;
 
-		if( plural )
-			return (gender == Gender.Female ? "las " : "los ") + str;
-
-		else
+			if (plural)
+				return (gender == Gender.Female ? "las " : "los ") + str;
 
 			return (gender == Gender.Female ? "la " : "el ") + str;
 		}
@@ -474,7 +448,7 @@ namespace RimWorld_LanguageWorker_Spanish
 		/// <param name="str">String.</param>
 		public string ToTitleCaseOther(string str)
 		{
-			// TODO: pas de capitalisation après "[uU]n", "[uU]ne"
+			// TODO: verify: no capitalisation after "[uU]n", "[uU]na"
 			if (str.NullOrEmpty())
 				return str;
 
@@ -485,6 +459,16 @@ namespace RimWorld_LanguageWorker_Spanish
 			return processed_str;
 		}
 
+		/// <summary>
+		/// Main ToTitleCase function, calls other specialized functions based on the context 
+		/// identified from the callstack.
+		/// Each other function implements a different title case algo depending on the lang/culture
+		/// (ex. names, quest title etc.)
+		/// The callstack crawling was adopted because the function to patch in the Rimworld code
+		/// was not clearly identified at the time. Other method is welcome.
+		/// </summary>
+		/// <returns>The title cased string.</returns>
+		/// <param name="str">String.</param>
 		public override string ToTitleCase(string str)
 		{
 			if (str.NullOrEmpty())
@@ -528,78 +512,126 @@ namespace RimWorld_LanguageWorker_Spanish
 			return processed_str;
 		}
 
+		/// <summary>
+		/// PluralizeOneWord implements teh basic grammar rules for one word.
+		/// Do not intend to be complete, but to be sufficient so that the words
+		/// in the game are correct.
+		/// Called on each appropriate part of a compound word () separated with ' ' or '-'
+		/// in PluralizeHyphenated and in the main function Pluralize.
+		/// Uses the word lists (HashSets):
+		///  	Exceptions_Plural_es, Exceptions_Plural_s, Exceptions_Plural_invariant.
+		/// </summary>
+		/// <returns>The plural of the given str according to gender and count.</returns>
+		/// <param name="str">String.</param>
+		/// <param name="gender">Verse.Gender.</param>
+		/// <param name="count">int.</param>
 		private string PluralizeOneWord(string str, Gender gender, int count = -1)
-    {
-      // Exceptions to general rules for plural
-      string item = str.ToLower();
-      string str_pluralized = str;
-      
-      // TODO: define plural exceptions for Spanish
-      if (Exceptions_Plural_aux.Contains(item))
-      {
-        str_pluralized = str.Substring(0, str.Length - 3) + "aux";
-      }
-      else if (Exceptions_Plural_s.Contains(item))
-      {
-        str_pluralized = str + "s";
-      }
-      else if (Exceptions_Plural_x.Contains(item))
-      {
-        str_pluralized = str + "x";
-      }
-      else if (str.Equals("box", StringComparison.CurrentCulture))
-      {
-        // Foreign words with plural in the original language
-        str_pluralized = "boxes";
-      }
-      else if (str.Equals("œil", StringComparison.CurrentCulture))
-      {
-        // Irregular forms: plural exceptions should be in a lookup dictionary
-        str_pluralized = "yeux";
-      }
-      else if (str.Equals("pilum", StringComparison.CurrentCulture))
-      {
-        // latin exception
-        str_pluralized = "pila";
-      }
-      else if (str.ToLower().Equals("yorkshire", StringComparison.CurrentCulture)
-        || str.ToLower().Equals("molotov", StringComparison.CurrentCulture)
-        || str.ToLower().Equals("pemmican", StringComparison.CurrentCulture)
-        || str.ToLower().Equals("pekoe", StringComparison.CurrentCulture)
-      )
-      {
-        // Foreign words with no plural
-        str_pluralized = str;
-      }
-      else
-      {
-        // Normal rules
-        char last = str[str.Length - 1];
-        char oneBeforeLast = str.Length >= 2 ? str[str.Length - 2] : '\0';
-        
-        if( IsVowel(last) )
-        {
-          if( str == "sí" )
-            str_pluralized = "síes";
-          else if( last == 'í' || last == 'ú' || last == 'Í' || last == 'Ú' )
-            str_pluralized = str + "es";
-          else
-            str_pluralized = str + 's';
-        }
-        else
-        {
-          if( (last == 'y' || last == 'Y') && IsVowel(oneBeforeLast) )
-            str_pluralized = str + "es";
-          else if( "lrndzjsxLRNDZJSX".IndexOf(last) >= 0 || (last == 'h' && oneBeforeLast == 'c') )
-            str_pluralized = str + "es";
-          else
-            str_pluralized = str + 's';
-        }
-      }
-      
-      return str_pluralized;
-    }
-    
+		{
+			// Exceptions to general rules for plural
+			string item = str.ToLower();
+			string str_pluralized = str;
+
+			if (Exceptions_Plural_es.Contains(item))
+			{
+				str_pluralized = str.Substring(0, str.Length - 3) + "es";
+			}
+			else if (Exceptions_Plural_s.Contains(item))
+			{
+				str_pluralized = str + "s";
+			}
+			else if (str.Equals("box", StringComparison.CurrentCulture))
+			{
+				// Foreign words with plural in the original language
+				str_pluralized = "boxes";
+			}
+			else if (str.Equals("œil", StringComparison.CurrentCulture))
+			{
+				// Irregular forms: plural exceptions should be in a lookup dictionary
+				str_pluralized = "yeux";
+			}
+			else if (str.Equals("pilum", StringComparison.CurrentCulture))
+			{
+				// latin exception
+				str_pluralized = "pila";
+			}
+			else if (Exceptions_Plural_invariant.Contains(str.ToLower()))
+			{
+				// Words with invariant plural, ex. foreign words (Molotov, Yorkshire)
+				str_pluralized = str;
+			}
+			else
+			{
+				// Normal rules
+				char last = str[str.Length - 1];
+				char oneBeforeLast = str.Length >= 2 ? str[str.Length - 2] : '\0';
+
+				if (IsVowel(last))
+				{
+					if (str == "sí")  // TODO: remove since this is already handled in Exceptions_Plural_es
+					{
+						str_pluralized = "síes";
+					}
+					else
+					{
+						if (last == 'í' || last == 'ú' || last == 'Í' || last == 'Ú')
+						{
+							str_pluralized = str + "es";
+						}
+						else
+						{
+							str_pluralized = str + 's';
+						}
+					}
+				}
+				else
+				{
+					// TODO: check if needed in the game
+					// UNDONE: Ending with -ión -> -iones
+					if ((last == 'y' || last == 'Y') && IsVowel(oneBeforeLast))
+					{
+						str_pluralized = str + "es";
+					}
+					else if ((last == 'z' || last == 'Z') && (str.Length >= 2))
+					{
+						// Replace 'z' with 'c', then add "es"
+						str_pluralized = str.Substring(0, str.Length - 1) + "ces";
+					}
+					else
+					{
+						//  - ("lrndzjsxLRNDZJSX".IndexOf(last) >= 0 && IsVowel(oneBeforeLast)) gets -es
+						//  - Ending with "ch" gets -es
+						//  - Ending with a consonant cluster, or a vowel + consonant!="lrndzjsxLRNDZJSX" gets -s
+						//  - Ending with st or zt are invariant (ex. test)
+						//  - Ending with s and unstressed last syllable are invariant
+						if (("lrndzjsxLRNDZJSX".IndexOf(last) >= 0 && IsVowel(oneBeforeLast)) gets - es) || (last == 'h' && oneBeforeLast == 'c'))
+						{
+							str_pluralized = str + "es";
+						}
+						else if (("zsZS".IndexOf(oneBeforeLast) >= 0 && (last == 't'))
+							|| ("aeiouAEIOU".IndexOf(oneBeforeLast) >= 0 && (last == 's'))
+							)
+						{
+							// Invariant, ex. el test/los test, el lunes/los lunes
+							str_pluralized = str;
+						}
+						else
+						{
+							str_pluralized = str + 's';
+						}
+					}
+				}
+			}
+
+			return str_pluralized;
+		}
+
+		/// <summary>
+		/// PluralizeHyphenated splits the given str at '-' and calls PluralizeOneWord on each part.
+		/// The word list in NonUppercaseWords (HashSet) stops further recursion (ex. de, à etc).
+		/// (This might need different lists in other languages).
+		/// Another list is for words that are invariant: ex. multi-, nano-, auto- etc.
+		///  	Exceptions_Plural_es, Exceptions_Plural_s, Exceptions_Plural_invariant.
+		/// </summary>
 		private string PluralizeHyphenated(string str, Gender gender, int count = -1)
 		{
 			string[] array = str.Split('-');
@@ -616,46 +648,50 @@ namespace RimWorld_LanguageWorker_Spanish
 			{
 				// stop pluralization after these words
 				if (NonUppercaseWords.Contains(array[i])
-					|| array[i].Equals("lance")
-					|| array[i].Equals("pare")
-					|| array[i].Equals("anti")
-					|| array[i].Equals("dompte")
+					// || array[i].Equals("para")
+					//|| array[i].Equals("anti")
 					) // or more generally, any verb
 				{
 					break;
 				}
-				else if (
-						 array[i].Equals("mini")
-					|| array[i].Equals("mono")
-					|| array[i].Equals("multi")
-					|| array[i].Equals("mi")
-					|| array[i].Equals("demi")
-					|| array[i].Equals("semi")
-					|| array[i].Equals("t")     // t-shirt
-					|| array[i].Equals("hi")    // hi-tech
-					|| array[i].Equals("carbu") // game specific
-					|| array[i].Equals("gastro")
-					|| array[i].Equals("go")
-					|| array[i].Equals("wake")
-					|| array[i].Equals("mech")
-					|| array[i].Equals("avant")
-					|| array[i].Equals("arrière")
-					|| array[i].Equals("après")
-					|| array[i].Equals("contre")
-					)
-				{
-					// exception to the pluralize rules
-					continue;
-				}
 				else
 				{
-					array[i] = PluralizeOneWord(array[i], gender, count);
+					if (array[i].Equals("mini")
+						|| array[i].Equals("mono")
+						|| array[i].Equals("multi")
+						|| array[i].Equals("mi")
+						|| array[i].Equals("semi")
+						|| array[i].Equals("neuro")
+						|| array[i].Equals("t")     // t-shirt
+						|| array[i].Equals("hi")    // hi-tech
+						|| array[i].Equals("carbu") // game specific
+						|| array[i].Equals("gastro")
+						|| array[i].Equals("go")
+						|| array[i].Equals("wake")
+						|| array[i].Equals("mech")
+						|| array[i].Equals("meca")
+						|| array[i].Equals("auto")
+						|| array[i].Equals("nano")
+						|| array[i].Equals("psico")
+						|| array[i].Equals("electro")
+						)
+					{
+						// exception to the pluralize rules
+						continue;
+					}
+					else
+					{
+						array[i] = PluralizeOneWord(array[i], gender, count);
+					}
 				}
 			}
 
 			return string.Join("-", array);
 		}
 
+		/// <summary>
+		/// main Pluralize function. It splits the given str at ' ' and calls PluralizeHyphenated on each part.
+		/// </summary>
 		public override string Pluralize(string str, Gender gender, int count = -1)
 		{
 			if (str.NullOrEmpty())
@@ -673,45 +709,50 @@ namespace RimWorld_LanguageWorker_Spanish
 
 			for (int i = 0; i < array.Length; i++)
 			{
-				// stop pluralization after these words
+				// Stop pluralization after these words
 				if (NonUppercaseWords.Contains(array[i])
-					|| array[i].StartsWith("d'", StringComparison.CurrentCulture)
-					|| array[i].StartsWith("(", StringComparison.CurrentCulture)
-				)
+						|| array[i].StartsWith("d'", StringComparison.CurrentCulture)  // French elision of "de (vowel)" follows the rule for "de"
+						|| array[i].StartsWith("(", StringComparison.CurrentCulture)	 // Start of words in parentheses
+					)
 				{
 					break;
 				}
-				else if ((i > 0) && (i < array.Length - 1) && array[i].Equals("non") // in the middle ?
-							|| array[i].ToLower().Equals("avant")   // adverbs
-							|| array[i].ToLower().Equals("arrière")
-							|| array[i].ToLower().Equals("hautement")
-							|| array[i].ToLower().Equals("iem")			// game specific
-							|| array[i].ToLower().Equals("ia")
-							|| array[i].ToLower().Equals("luciferium")
-							|| array[i].Equals("-") // a separator ' - '
-						)
-				{
-					// invariants
-					continue;
-				}
 				else
 				{
-					array[i] = PluralizeHyphenated(array[i], gender, count);
+					if ((i > 0) && (i < array.Length - 1) &&
+								 																				// French has invariant adverbs listed here, such as "avant", "arrière", "hautement" 
+								 array[i].Equals("non") 								// in the middle ?
+							|| array[i].ToLower().Equals("pem")     	// game specific: IEM (PEM)
+							|| array[i].ToLower().Equals("ia")     		// game specific: AI (IA)
+							|| array[i].ToLower().Equals("luciferium")
+							|| array[i].Equals("-")										// a separator ' - '
+						)
+					{
+						// invariants: do not change this split.
+						continue;
+					}
+					else
+					{
+						array[i] = PluralizeHyphenated(array[i], gender, count);
+					}
 				}
 			}
 
-			// Common last adjectives in the game
+			// Adjectives are impossible to detect at the level of the languageworker but
+			// common last adjectives in the game may give a hint.
 			int n = array.Length;
 			if (array[n - 1].StartsWith("(", StringComparison.CurrentCulture))
 				n -= 1;
 
 			if ((n > 0) &&
-					( array[n - 1].StartsWith("inachevé", StringComparison.CurrentCulture)
-				|| array[n - 1].StartsWith("lié", StringComparison.CurrentCulture)
-				|| array[n - 1].StartsWith("improvisé", StringComparison.CurrentCulture)
-				|| array[n - 1].StartsWith("éventré", StringComparison.CurrentCulture)
-				))
+					 (array[n - 1].StartsWith("inacabad", StringComparison.CurrentCulture)
+						// || array[n - 1].StartsWith("lié", StringComparison.CurrentCulture)
+						// || array[n - 1].StartsWith("improvisé", StringComparison.CurrentCulture)
+						// || array[n - 1].StartsWith("éventré", StringComparison.CurrentCulture)
+						)
+				)
 			{
+				// UNDONE:
 				array[n - 1] = PluralizeHyphenated(array[n - 1], gender, count);
 			}
 
@@ -720,6 +761,9 @@ namespace RimWorld_LanguageWorker_Spanish
 			return str_pluralized;
 		}
 
+		/// <summary>
+		/// main PostProcessed function.
+		/// </summary>
 		public override string PostProcessed(string str)
 		{
 			//StartStatsLogging(new StackTrace());
@@ -728,6 +772,9 @@ namespace RimWorld_LanguageWorker_Spanish
 			return processed_str;
 		}
 
+		/// <summary>
+		/// main PostProcessedKeyedTranslation function.
+		/// </summary>
 		public override string PostProcessedKeyedTranslation(string translation)
 		{
 			//StartStatsLogging(new StackTrace());
@@ -738,100 +785,32 @@ namespace RimWorld_LanguageWorker_Spanish
 
 		public bool IsVowel(char ch)
 		{
-			//Do not include [hH]
 			// return "aàâäæeéèêëiîïoôöœuùüûAÀÂÄÆEÉÈÊËIÎÏOÔÖŒUÙÜÛ".IndexOf(ch) >= 0; // french vowels
-      return "aeiouáéíóúAEIOUÁÉÍÓÚ".IndexOf(ch) >= 0;
+			return "aeiouáéíóúAEIOUÁÉÍÓÚ".IndexOf(ch) >= 0;
 		}
 
-		// TODO: french typography, add space before [:;?!]
+		// TODO: adapt to spanish typography.
 		// The Regex ([<][^>]*[>]|) component takes any XML tag into account,
 		// ex. the name color tag <color=#D09B61FF> or <Name>
-		private static readonly Regex WordsWithoutElision = new Regex(@"\b(h[^ <>]+|onz[^ <>]+)\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		// NOTE: exception "lorsque aucun", "lorsque aucune", "lorsque avec", "lorsque <prenom>"
-		private static readonly Regex ElisionE = new Regex(@"\b([cdjlmnst]|qu|quoiqu|lorsqu)e ([<][^>]*[>]|)([aàâäæeéèêëiîïoôöœuùüûh])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		private static readonly Regex ElisionLa = new Regex(@"\b(l)a ([<][^>]*[>]|)([aàâäæeéèêëiîïoôöœuùüûh])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		private static readonly Regex ElisionSi = new Regex(@"\b(s)i (ils?)\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		// possessive + vowel/h muet. ex. instead of "sa épée" -> "son épée", "son/sa oreille" -> "son oreille"
-		private static readonly Regex PossessiveVowel = new Regex(@"\b([mst])(on/[mst]|)a ([<][^>]*[>]|)([aàâäæeéèêëiîïoôöœuùüûh])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		private static readonly Regex DeLe = new Regex(@"\b(d)e ([<][^>]*[>]|)le ", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		private static readonly Regex DeLes = new Regex(@"\b(d)e ([<][^>]*[>]|)l(es) ", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		private static readonly Regex ALe = new Regex(@"\b(à) ([<][^>]*[>]|)le(s?) ", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		// dénomination incorrect du sexe des pawns
-		private static readonly Regex sexMale = new Regex(@"\b(sexe m)âle\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-		private static readonly Regex sexFemale = new Regex(@"\b(sexe fem)elle\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
+		private static readonly Regex DeEl = new Regex(@"\b(d)e ([<][^>]*[>]|)el ", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+		// Incorrect denomination of psychic drone affected gender: should be "de sexo masculino/femenino"
+		private static readonly Regex sexMale = new Regex(@"\b(sexo )varón\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+		private static readonly Regex sexFemale = new Regex(@"\b(sexo )mujer\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+		/// <summary>
+		/// The PostProcessing core.
+		/// </summary>
 		private static string PostProcessedLanguageGrammar(string str)
 		{
-      // French typography commented out
-			// "[dD]e des" are generated by some rules of type "de [x_indefinite]" in plural
-      // 			str = str.Replace(" de des ", " des ")
-      // 				.Replace("De des ", "Des ");
-      // 
-      // 			str = WordsWithoutElision.Replace(str, new MatchEvaluator(ReplaceNoElision));
-      // 			str = ElisionE.Replace(str, "$1'$2$3");
-      // 			str = ElisionLa.Replace(str, "$1'$2$3");
-      // 			str = ElisionSi.Replace(str, "$1'$2");
-      // 			str = PossessiveVowel.Replace(str, "$1on $3$4");
-      // 			str = DeLe.Replace(str, "$1u $2");
-      // 			str = DeLes.Replace(str, "$1$3 $2");
-      // 			str = sexMale.Replace(str, "$1asculin");
-      // 			str = sexFemale.Replace(str, "$1inin");
-      // 			str = ALe.Replace(str, new MatchEvaluator(ReplaceALe));
+
+			str = DeEl.Replace(str, "$1el $2");
+			str = sexMale.Replace(str, "$1masculino");
+			str = sexFemale.Replace(str, "$1femenino");
 
 			// Clean out zero-width space
 			return str.Replace("\u200B", "");
-		}
-
-		// The ALe Regex has three groups: "\b(à) ([<][^>]*[>]|)le(s?) " where
-		//		Groups[1] is (à|À),
-		//		Groups[2] is an eventual text coloring tag <tag>,
-		//		Groups[3] is (s?) for plural.
-		// For each case:
-		//		"à <tag>le ": return "au <tag>";
-		//  	"à <tag>les ": return "aux <tag>";
-		//		"\u00c0 <tag>le ": return "Au <tag>";
-		//		"\u00c0 <tag>les ": return "Aux <tag>";
-		private static string ReplaceALe(Match match)
-		{
-			string str = "";
-			switch (match.Groups[1].Value)
-			{
-				case "à":
-					str = "au";
-					break;
-				case "\u00c0":
-					str = "Au";
-					break;
-			}
-
-			// Add 'x' for plural
-			if (match.Groups[3].Value == "s")
-			{
-				str += "x";
-			}
-
-			// Add space before any Group 2
-			str += " ";
-			if (match.Groups[2].Value != "")
-			{
-				str += match.Groups[2].Value;
-			}
-			return str;
-		}
-
-		private static string ReplaceNoElision(Match match)
-		{
-			string item_raw = match.ToString();
-			string item = item_raw.ToLower();
-			foreach (var s in Exceptions_No_Elision)
-			{
-				if (item.StartsWith(s, StringComparison.CurrentCulture))
-				{
-					// Add zero-width space to foul the elision rules
-					return ("\u200B" + item_raw);
-				}
-			}
-			return item_raw;
 		}
 
 		/// <summary>
@@ -870,12 +849,13 @@ namespace RimWorld_LanguageWorker_Spanish
 							// the grammar uses male only as gender
 							gender = Gender.Male;
 							// RW will use kind.labelMale since the grammatical gender is Male !
-							kind.labelMale = kind.label + " femelle";
+							// TODO: verify female (ex. la hembra de avestruz)
+							kind.labelMale = kind.label + " hembra";
 
 							if (kind.labelFemale.NullOrEmpty())
 							{
 								// build one if the language does not provide kind.labelFemale
-								kind.labelFemale = kind.label + " femelle";
+								kind.labelFemale = kind.label + " hembra";
 							}
 						}
 
@@ -891,12 +871,13 @@ namespace RimWorld_LanguageWorker_Spanish
 							// the grammar uses female only as gender
 							gender = Gender.Female;
 							// RW will use kind.labelFemale since the grammatical gender is Female !
-							kind.labelFemale = kind.label + " mâle";
+							// TODO: verify macho, macha, masculino, masculina
+							kind.labelFemale = kind.label + " macho";
 
 							if (kind.labelMale.NullOrEmpty())
 							{
 								// build one if the language does not provide kind.labelMale
-								kind.labelMale = kind.label + " mâle";
+								kind.labelMale = kind.label + " macho";
 							}
 						}
 
@@ -958,7 +939,8 @@ namespace RimWorld_LanguageWorker_Spanish
 			yield return new Rule_String(prefix + "description", def.description);
 			yield return new Rule_String(prefix + "definite", languageWorker.WithDefiniteArticle(def.label, gender, plural));
 			yield return new Rule_String(prefix + "indefinite", languageWorker.WithIndefiniteArticle(def.label, gender, plural));
-			yield return new Rule_String(prefix + "possessive", plural ? "ses" : gender.GetPossessive());
+			// TODO: verify correctness of "sus" (de él, de ella, de ellos, de ellas)
+			yield return new Rule_String(prefix + "possessive", plural ? "sus" : gender.GetPossessive());
 		}
 
 		public static IEnumerable<Rule> FixRulesForBodyPartRecord(string prefix, BodyPartRecord part)
@@ -980,7 +962,8 @@ namespace RimWorld_LanguageWorker_Spanish
 			yield return new Rule_String(prefix + "label", part.Label);
 			yield return new Rule_String(prefix + "definite", languageWorker.WithDefiniteArticle(part.Label, gender, plural));
 			yield return new Rule_String(prefix + "indefinite", languageWorker.WithIndefiniteArticle(part.Label, gender, plural));
-			yield return new Rule_String(prefix + "possessive", plural ? "ses" : gender.GetPossessive());
+			// TODO: verify correctness of "sus" (de él, de ella, de ellos, de ellas)
+			yield return new Rule_String(prefix + "possessive", plural ? "sus" : gender.GetPossessive());
 		}
 
 	}
