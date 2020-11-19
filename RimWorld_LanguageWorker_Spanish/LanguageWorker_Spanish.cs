@@ -56,6 +56,13 @@ namespace RimWorld_LanguageWorker_Spanish
 				"jueves"		// and others (not in the game) 
 		};
 
+		// TODO: irregular plural, mostly foreign words with plural in the original language
+		private Dictionary<string, string> Exceptions_Plural_irregular = new Dictionary<string, string>
+		{
+				{"box","boxes"},
+				{"pilum","pila"}
+		};
+
 		// TODO: Placeholder for words that do not get elision
 		private static readonly HashSet<string> Exceptions_No_Elision = new HashSet<string> {
 			//"hack",
@@ -527,10 +534,12 @@ namespace RimWorld_LanguageWorker_Spanish
 		/// <param name="count">int.</param>
 		private string PluralizeOneWord(string str, Gender gender, int count = -1)
 		{
-			// Exceptions to general rules for plural
 			string item = str.ToLower();
 			string str_pluralized = str;
 
+			// Exceptions to general rules for plural
+			// Lookup in various word lists (HashSets<string> or Dictionary<string,string>)
+			// The keys are in lower case.
 			if (Exceptions_Plural_es.Contains(item))
 			{
 				str_pluralized = str.Substring(0, str.Length - 3) + "es";
@@ -539,25 +548,15 @@ namespace RimWorld_LanguageWorker_Spanish
 			{
 				str_pluralized = str + "s";
 			}
-			else if (str.Equals("box", StringComparison.CurrentCulture))
-			{
-				// Foreign words with plural in the original language
-				str_pluralized = "boxes";
-			}
-			else if (str.Equals("œil", StringComparison.CurrentCulture))
-			{
-				// Irregular forms: plural exceptions should be in a lookup dictionary
-				str_pluralized = "yeux";
-			}
-			else if (str.Equals("pilum", StringComparison.CurrentCulture))
-			{
-				// latin exception
-				str_pluralized = "pila";
-			}
-			else if (Exceptions_Plural_invariant.Contains(str.ToLower()))
+			else if (Exceptions_Plural_invariant.Contains(item))
 			{
 				// Words with invariant plural, ex. foreign words (Molotov, Yorkshire)
 				str_pluralized = str;
+			}
+			else if (Exceptions_Plural_irregular.ContainsKey(item) == true)
+			{
+				// Mostly foreign words with plural in the original language
+				str_pluralized = Exceptions_Plural_irregular[item];
 			}
 			else
 			{
@@ -585,7 +584,8 @@ namespace RimWorld_LanguageWorker_Spanish
 				}
 				else
 				{
-					// TODO: check if needed in the game
+					// TODO: check if some missing rules are needed in the game.
+					//	bearing in mind that these might be useful in mods other than Vanilla RimWorld.
 					// UNDONE: Ending with -ión -> -iones
 					if ((last == 'y' || last == 'Y') && IsVowel(oneBeforeLast))
 					{
@@ -603,7 +603,8 @@ namespace RimWorld_LanguageWorker_Spanish
 						//  - Ending with a consonant cluster, or a vowel + consonant!="lrndzjsxLRNDZJSX" gets -s
 						//  - Ending with st or zt are invariant (ex. test)
 						//  - Ending with s and unstressed last syllable are invariant
-						if (("lrndzjsxLRNDZJSX".IndexOf(last) >= 0 && IsVowel(oneBeforeLast)) gets - es) || (last == 'h' && oneBeforeLast == 'c'))
+						if (("lrndzjsxLRNDZJSX".IndexOf(last) >= 0 && IsVowel(oneBeforeLast))
+							 || (last == 'h' && oneBeforeLast == 'c'))
 						{
 							str_pluralized = str + "es";
 						}
