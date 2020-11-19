@@ -265,7 +265,9 @@ namespace RimWorld_LanguageWorker_Spanish
 				{
 					Debug.Assert((!detectedPawnName && i == 4)
 							|| (detectedPawnName && i == 5));
+
 					if (i == 4) { detectedPawnName = true; }
+
 					if (!nameCategoryFrames.ContainsKey("IsPawnName" + i))
 					{
 						// Two possible keys: "IsPawnName4" and "IsPawnName5"
