@@ -30,7 +30,7 @@ namespace RimWorld_LanguageWorker_Spanish
 
 		// TODO: in plural, these words get -es
 		private static readonly HashSet<string> Exceptions_Plural_es = new HashSet<string> {
-			"sí",
+			// "sí",
 			"no"
 		};
 
@@ -566,25 +566,18 @@ namespace RimWorld_LanguageWorker_Spanish
 
 				if (IsVowel(last))
 				{
-					if (str == "sí")  // TODO: remove since this is already handled in Exceptions_Plural_es
+					if (last == 'í' || last == 'ú' || last == 'Í' || last == 'Ú')
 					{
-						str_pluralized = "síes";
+						str_pluralized = str + "es";
 					}
 					else
 					{
-						if (last == 'í' || last == 'ú' || last == 'Í' || last == 'Ú')
-						{
-							str_pluralized = str + "es";
-						}
-						else
-						{
-							str_pluralized = str + 's';
-						}
+						str_pluralized = str + 's';
 					}
 				}
 				else
 				{
-					// TODO: check if some missing rules are needed in the game.
+					// TODO: check if some missing rules are needed in the game,
 					//	bearing in mind that these might be useful in mods other than Vanilla RimWorld.
 					// UNDONE: Ending with -ión -> -iones
 					if ((last == 'y' || last == 'Y') && IsVowel(oneBeforeLast))

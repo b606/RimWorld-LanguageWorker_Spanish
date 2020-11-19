@@ -1,5 +1,10 @@
 2020-11-19  b606  <7627533+b606@users.noreply.github.com>
 
+	* LanguageWorker_Spanish.cs: Remove testing "sí -> síes", the
+	general rule fits this case.
+
+2020-11-19  b606  <7627533+b606@users.noreply.github.com>
+
 	* LanguageWorker_Spanish.cs: Pluralize uses a private
 	Dictionary<string,string> for exceptionally irregular plural
 	words. Kept the HashSets as they are even though one
