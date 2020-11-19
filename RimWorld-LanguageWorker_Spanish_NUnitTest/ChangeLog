@@ -1,5 +1,9 @@
 2020-11-19  b606  <7627533+b606@users.noreply.github.com>
 
+	* TestToTitleCase.cs: Mall cleanup
+
+2020-11-19  b606  <7627533+b606@users.noreply.github.com>
+
 	* ReplaceResolverTest.cs:
 	* NumberCaseResolverTest.cs:
 	* RimWorld-LanguageWorker_Spanish_NUnitTest.csproj: Deleted

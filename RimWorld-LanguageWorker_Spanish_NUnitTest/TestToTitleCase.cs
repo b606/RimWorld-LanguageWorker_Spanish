@@ -21,7 +21,6 @@ namespace RimWorldLanguageWorkerSpanish_NUnitTest
 			Assert.AreEqual("Cambiar 'Tortue' Legua", _lw.ToTitleCaseProperName(template));
 
 			template = "Cagoguaxo éléphante de mer";
-			// TODO: Should be "Cagoguaxo Éléphante de mer"
 			Assert.AreEqual("Cagoguaxo Éléphante de Mer", _lw.ToTitleCaseProperName(template));
 
 			template = "charles de gaulle";
