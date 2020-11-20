@@ -98,7 +98,7 @@ namespace RimWorld_LanguageWorker_Spanish
 			__state = new PhysicalCharacter(ref kind, ref gender);
 
 			// if the current language is not the target, do nothing
-			if (!LanguageDatabase.activeLanguage.FriendlyNameEnglish.Equals(LanguageWorkerPatcher.__targetLanguage))
+			if (! LanguageWorkerPatcher.IsTargetLanguage(LanguageDatabase.activeLanguage.FriendlyNameEnglish))
 				return true;
 
 			// change kind.label and gender according to the language grammar

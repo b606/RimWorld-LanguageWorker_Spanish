@@ -1,5 +1,17 @@
 2020-11-20  b606  <7627533+b606@users.noreply.github.com>
 
+	* Patcher.cs:
+	* RulesForDefPatch.cs:
+	* RulesForPawnPatch.cs:
+	* LanguageWorker_Mod.cs:
+	* LoadedLanguagePatch.cs:
+	* RulesForBodyPartRecordPatch.cs: Modified
+	LanguageWorkerPatcher class to activate the patches for a
+	family of languages, here "Spanish" and "Latin American
+	Spanish".
+
+2020-11-20  b606  <7627533+b606@users.noreply.github.com>
+
 	* Patcher.cs: Changed Harmony patches identifier to
 	"com.b606.mods.languageworkerSpanish".
 

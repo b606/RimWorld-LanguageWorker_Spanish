@@ -27,7 +27,7 @@ namespace RimWorld_LanguageWorker_Spanish
 		static bool RulesForDefPrefix(ref IEnumerable<Rule> __result, string prefix, Def def)
 		{
 			// if the current language is not the target, do nothing
-			if (!LanguageDatabase.activeLanguage.FriendlyNameEnglish.Equals(LanguageWorkerPatcher.__targetLanguage))
+			if (! LanguageWorkerPatcher.IsTargetLanguage(LanguageDatabase.activeLanguage.FriendlyNameEnglish))
 				return true;
 
 			// Rewrite the method entirely since it is short enough

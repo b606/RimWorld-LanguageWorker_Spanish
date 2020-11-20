@@ -49,7 +49,7 @@ namespace RimWorld_LanguageWorker_Spanish
 
 			foreach (LoadedLanguage l in LanguageDatabase.AllLoadedLanguages)
 			{
-				if (l.FriendlyNameEnglish.Equals(LanguageWorkerPatcher.__targetLanguage))
+				if (LanguageWorkerPatcher.IsTargetLanguage(l.FriendlyNameEnglish))
 				{
 					LanguageWorker_Spanish.LogMessage("Other: " + l.FriendlyNameEnglish +
 						" (" + l.folderName + ") " + l.info.languageWorkerClass);

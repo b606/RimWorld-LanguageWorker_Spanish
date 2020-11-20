@@ -18,7 +18,16 @@ namespace RimWorld_LanguageWorker_Spanish
 {
 	public static class LanguageWorkerPatcher
 	{
-		public const string __targetLanguage = "Spanish";
+		private static readonly HashSet<string> targetLanguageLSet = new HashSet<string>
+		{
+				"Spanish",
+				"Latin American Spanish"
+		};
+
+		public static bool IsTargetLanguage(string aLang)
+		{
+			return targetLanguageLSet.Contains(aLang);
+		}
 
 		public static void DoPatching()
 		{
