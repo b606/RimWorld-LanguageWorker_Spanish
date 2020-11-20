@@ -27,10 +27,10 @@ namespace RimWorld_LanguageWorker_Spanish
 #endif
 			try
 			{
-				Harmony harmony = new Harmony(id: "com.b606.mods.languageworker");
+				Harmony harmony = new Harmony(id: "com.b606.mods.languageworkerSpanish");
 				Assembly assembly = Assembly.GetExecutingAssembly();
 
-				LanguageWorker_Spanish.LogMessage("Installing com.b606.mods.languageworker...");
+				LanguageWorker_Spanish.LogMessage("Installing com.b606.mods.languageworkerSpanish...");
 				LanguageWorker_Spanish.LogMessage(string.Format("Active language: {0}",
 					LanguageDatabase.activeLanguage.FriendlyNameEnglish));
 
