@@ -1,4 +1,4 @@
-# RimWorld-LanguageWorker_Spanish
+﻿# RimWorld-LanguageWorker_Spanish
 ![]( https://raw.githubusercontent.com/wiki/b606/RimWorld-LanguageWorker_Spanish/images/LWKR_Spanish_Mod_banner.png)
 
 A mod to make the Spanish language in RimWorld as grammatically correct as possible.
