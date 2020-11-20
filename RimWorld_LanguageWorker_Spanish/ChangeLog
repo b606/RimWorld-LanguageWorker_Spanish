@@ -1,3 +1,7 @@
+2020-11-20  b606  <7627533+b606@users.noreply.github.com>
+
+	* LanguageWorker_Spanish.cs: Added contraction "a el" -> "al".
+
 2020-11-19  b606  <7627533+b606@users.noreply.github.com>
 
 	* LanguageWorker_Spanish.cs: Remove testing "sí -> síes", the

@@ -787,7 +787,9 @@ namespace RimWorld_LanguageWorker_Spanish
 		// The Regex ([<][^>]*[>]|) component takes any XML tag into account,
 		// ex. the name color tag <color=#D09B61FF> or <Name>
 
+		// Common contractions
 		private static readonly Regex DeEl = new Regex(@"\b(d)e ([<][^>]*[>]|)el ", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+		private static readonly Regex AEl = new Regex(@"\b(a) ([<][^>]*[>]|)el ", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 		// Incorrect denomination of psychic drone affected gender: should be "de sexo masculino/femenino"
 		private static readonly Regex sexMale = new Regex(@"\b(sexo )varón\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
@@ -800,6 +802,7 @@ namespace RimWorld_LanguageWorker_Spanish
 		{
 
 			str = DeEl.Replace(str, "$1el $2");
+			str = AEl.Replace(str, "$1l $2");
 			str = sexMale.Replace(str, "$1masculino");
 			str = sexFemale.Replace(str, "$1femenino");
 
