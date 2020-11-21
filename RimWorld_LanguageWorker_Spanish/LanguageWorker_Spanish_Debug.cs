@@ -20,8 +20,8 @@ namespace RimWorld_LanguageWorker_Spanish
 		private static Logger LogLanguageWorker = new Logger("LanguageWorker_Spanish.log");
 
 		// Light weight loggers, for diffs
-		private static Logger logLanguageWorkerIn = new Logger("LanguageWorkerIn.log");
-		private static Logger logLanguageWorkerOut = new Logger("LanguageWorkerOut.log");
+		private static Logger logLanguageWorkerIn = new Logger("LanguageWorkerIn_Spanish.log");
+		private static Logger logLanguageWorkerOut = new Logger("LanguageWorkerOut_Spanish.log");
 
 		// Heavy logger, for stats and CPU usage
 		private static StatsLogger logStats = new StatsLogger();

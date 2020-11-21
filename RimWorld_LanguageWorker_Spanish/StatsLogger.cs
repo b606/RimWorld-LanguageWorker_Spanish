@@ -196,10 +196,10 @@ namespace RimWorld_LanguageWorker_Spanish
 		private static List<KeyValuePair<string, StringStats>> loggedKeys = new List<KeyValuePair<string, StringStats>>();
 
 		// Log the processed strings into files
-		private static Logger logNotProcessed = new Logger("PostProcessed_no.txt");
-		private static Logger logInProcessed = new Logger("PostProcessed_in.txt");
-		private static Logger logOutProcessed = new Logger("PostProcessed_out.txt");
-		private static Logger logStats = new Logger("PostProcessed_stats.txt");
+		private static Logger logNotProcessed = new Logger("PostProcessed_no_Spanish.txt");
+		private static Logger logInProcessed = new Logger("PostProcessed_in_Spanish.txt");
+		private static Logger logOutProcessed = new Logger("PostProcessed_out_Spanish.txt");
+		private static Logger logStats = new Logger("PostProcessed_stats_Spanish.txt");
 
 		// Log the translated strings only once, count the hits
 		private static uint hitCount = 0;       // number of calls

@@ -1,3 +1,9 @@
+2020-11-21  b606  <7627533+b606@users.noreply.github.com>
+
+	* StatsLogger.cs:
+	* LanguageWorker_Spanish_Debug.cs: Avoid IO collision with
+	other LanguageWorker mods filenames.
+
 2020-11-20  b606  <7627533+b606@users.noreply.github.com>
 
 	* Patcher.cs:
