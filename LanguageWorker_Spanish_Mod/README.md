@@ -40,7 +40,7 @@ Features marked with (*) cannot be implemented in the vanilla LanguageWorker_Spa
 
 ### 3. Installation
 
-- **Subscribe to the mod on Steam Workshop** (https://steamcommunity.com/sharedfiles/filedetails/?id=2081845369) and activate ou deactivate the mod "LanguageWorkerSpanish_Mod" in the game,
+- **Subscribe to the mod on Steam Workshop** (https://steamcommunity.com/sharedfiles/filedetails/?id=2293997580) and activate ou deactivate the mod "LanguageWorkerSpanish_Mod" in the game,
 
 - or **download the zip archive** (https://github.com/b606/RimWorld-LanguageWorker_Spanish/releases/latest), and extract it in the Mods folder of RimWorld, generally:
 
