@@ -9,6 +9,6 @@
     <OutputPath>.\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="doc\LanguageInfo.xml" />
+    <Folder Include="doc\" />
   </ItemGroup>
 </Project>
