@@ -1,38 +1,57 @@
-[h2]Optimisation of Spanish languages in RimWorld[/h2]
+[h1]Optimización de las lenguas españolas en RimWorld[/h1]
 
-This mod improves the grammar and typography rules specific to the target language in RimWorld, which are impossible to implement without modifying the C# code built in the game. It is a complement to the translators work at https://github.com/Ludeon/, until the patches that it introduces will be obsoleted by some future version of RimWorld.
+[h3]Descripción[/h3]
+Este mod mejora las reglas gramaticales y de tipografía específicas del idioma de destino en RimWorld, que son imposibles de implementar sin modificar el código C# incorporado en el juego. Es un complemento al trabajo de los traductores de https://github.com/Ludeon/, hasta que los parches que introduce queden obsoletos para alguna futura versión de RimWorld.
 
-This mod does not add more translation, so you need to get your language translation as complete and as updated as possible. Spanish and Latin America Spanish are supported.
-		
-The mod is also designed to be as independent as possible and does not require any modification or special annotations in the official translation. It should not theoretically interfere with any other mods, it should work on any saved game, and can be activated or deactivated at will. 
+Este mod no añade más traducción, así que necesitas tener la traducción del lenguaje tan completa y actualizada como sea posible. El español y el español de América Latina están soportados.
 
-Please check out the features list and feel free to submit suggestions and bug reports on https://github.com/b606/RimWorld-LanguageWorker_Spanish/.
+El mod está también diseñado para ser lo más independiente posible y no requiere ninguna modificación o anotación especial en la traducción oficial. En teoría no debería interferir co​n ningún otro mod, debería funcionar en cualquier juego guardado, y puede ser activado o desactivado a voluntad. 
 
-The above image is temporary, I am looking for better artwork to illustrate the mod and Spanish culture (submit your proposal :-)
+La imagen de arriba es temporal, estoy buscando mejores obras de arte para ilustrar el mod y la cultura española (envía tu propuesta :-)
 
-[h3]Thanks to[/h3]
-Elevator89 from whom I draw the idea of developing LanguageWorker mods, Pardeike for his fabulous libHarmony patching library, and the testers.
+Por favor, compruebe la lista de características y siéntase libre de enviar sugerencias e informes de errores en https://github.com/b606/RimWorld-LanguageWorker_Spanish/.
 
-[h3]Download[/h3]
+[h3]Lista de características[/h3]
+[list]
+[*]Fija los artículos definidos e indefinidos.
+[*]Arregla los plurales para las palabras simples. La lista de excepciones a los plurales, como palabras irregulares, extranjeras e invariantes, debe actualizarse cuando sea necesario (WIP). Los plurales para palabras compuestas o co​n guiones también es un WIP (se necesitan probadores de habla española).
+[*]Contracciónes: "de el"​→"del", "a el"​→"al".
+[*]Los peones tribales, las ciudades y pueblos, las facciones y los rasgos geográficos reciben las mayúsculas adecuadas.
+[*]Los títulos de las misiones tienen un algoritmo especializado de mayúsculas (WIP, adaptarse a la práctica cultural).
+[*]Otro post-procesamiento de texto: "de sexo varón"​→"de sexo masculino", "de sexo mujer"​→"de sexo femenino". El actual sistema gramatical de RimWorld no proporciona una forma de tratar correctamente el género afectado de los drones psíquicos. 
+[*](*)Animales epicenos: el mod define etiquetas de animales sólo machos o sólo hembras. A partir de ahora, añade una calificación de género a la etiqueta genérica, por ejemplo, "la rata", "la rata macho" o "el rinoceronte hembra". Cuando el animal es domesticado y nombrado, el género vuelve al género físico. Por favor, avise si este comportamiento es inapropiado. NB: Esto es para un solo animal, la etiqueta genérica para animales (XXX_kindLabel) debe ser manejada correctamente en los archivos oficiales de traducción.
+[*](*)WIP: XXX_possessive depende del género del objeto (poseído), no del género del sujeto (poseedor). En francés, eso era esencial. En español, la diferencia debe ser detectada sólo para el plural ("sus") pero el parche puede hacer más que eso.
+[*]WIP: se pueden implementar otras elisiones (la versión francesa tiene muchas, aquí los probadores de habla hispana pueden preguntar si se necesita más)
+[/list]
+
+[h3]Gracias a[/h3]
+Elevator89 de quien saqué la idea de desarrollar los mods de LanguageWorker, Pardeike por su fabulosa biblioteca de parches de LibHarmony, y los probadores. La fuente RimWorld hecha por fans es de Marnador.
+
+[h3]Descargar[/h3]
 GitHub : https://github.com/b606/RimWorld-LanguageWorker_Spanish/releases/latest
 
-[h3]Other mods[/h3]
-[b]EdB Prepare Carefully [Français][/b]
+[h1]Otros mods[/h1]
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
+★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2081907934][b]EdB Prepare Carefully [Français][/b][/url]
 Traduction en français de [b]EdB Prepare Carefully[/b].
 Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081907934
-
-[b]Parlez-vous français ? [LanguageWorker_French Mod][/b]
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
+★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2081845369][b]Parlez-vous français ? [LanguageWorker_French Mod][/b][/url]
 Mod optimisant le français dans tout le jeu de RimWorld.
 Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081845369
-
-[b]Numbers [Français][/b]
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img] 
+★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2286691155][b]Numbers [Français][/b][/url]
 Traduction française du mod [b]Numbers[/b] 
 Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691155
-
-[b]Numbers Trait AddOn [Français][/b]
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
+★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2286691905][b]Numbers Trait AddOn [Français][/b][/url]
 Traduction française du mod [b]Numbers Trait AddOn[/b] 
 Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691905
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
 
-[h3]To encourage me[/h3]
-- Vote up the mod on SteamWorkshop
-- If you like the mod, please feel free to drop a few kofi https://ko-fi.com/b606at0116
+[h1]Para animarme[/h1]
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701581836390/34CBC07D7ED73B6282B3F7AF2E3D47BB462BF9B1/[/img]
+Vote el mod en SteamWorkshop
+
+[url=https://ko-fi.com/Z8Z51KQ21][img]https://steamuserimages-a.akamaihd.net/ugc/1666857701581884648/E7A2C95176A59BCBE7159C8939B3C975F97B6B01/[/img][/url]
+Si te gusta el mod, apóyame en https://ko-fi.com/b606at0116

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>LanguageWorker_Spanish Mod</name>
+	<author>b606</author>
+  <url>https://github.com/b606/RimWorld-LanguageWorker_Spanish/</url>
+  <packageId>b606.LanguageWorkerSpanish.Mod</packageId>
+  <supportedVersions>
+    <li>1.0</li>
+    <li>1.1</li>
+    <li>1.2</li>
+  </supportedVersions>
+	<description>LanguageWorker_Spanish Mod improves the grammar and typography rules specific to the target language in RimWorld, which are impossible to implement without modifying the C# code built in the game. It is a complement to the translators work at https://github.com/Ludeon/, until the patches that it introduces will be obsoleted by some future version of RimWorld.
+
+This mod does not add more translation, so you need to get your language translation as complete and as updated as possible. Spanish and Latin America Spanish are supported.
+		
+The mod is also designed to be as independent as possible and does not require any modification or special annotations in the official translation. It should not theoretically interfere with any other mods, it should work on any saved game, and can be activated or deactivated at will. 
+
+Please check out the features list and feel free to submit suggestions and bug reports on https://github.com/b606/RimWorld-LanguageWorker_Spanish/.
+
+&lt;b&gt;Thanks to&lt;/b&gt;
+Elevator89 from whom I draw the idea of developing LanguageWorker mods, Pardeike for his fabulous libHarmony patching library, and the testers.
+
+&lt;b&gt;Download&lt;/b&gt;
+GitHub : https://github.com/b606/RimWorld-LanguageWorker_Spanish/releases/latest
+
+&lt;b&gt;Other mods&lt;/b&gt;
+EdB Prepare Carefully [Français]
+Traduction en français de &lt;b&gt;EdB Prepare Carefully&lt;/b&gt;.
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081907934
+
+Parlez-vous français ? [LanguageWorker_French Mod]
+Mod optimisant le français dans tout le jeu de RimWorld.
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081845369
+
+Numbers [Français]
+Traduction française du mod &lt;b&gt;Numbers&lt;/b&gt; 
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691155
+
+Numbers Trait AddOn [Français]
+Traduction française du mod &lt;b&gt;Numbers Trait AddOn&lt;/b&gt; 
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691905
+
+&lt;b&gt;To encourage me&lt;/b&gt;
+- Vote up the mod on SteamWorkshop
+- If you like the mod, please feel free to drop a few kofi https://ko-fi.com/b606at0116
+</description>
+</ModMetaData>

@@ -1,0 +1,58 @@
+[h1]Optimisation of Spanish languages in RimWorld[/h1]
+
+[h3]Description[/h3]
+
+This mod improves the grammar and typography rules specific to the target language in RimWorld, which are impossible to implement without modifying the C# code built in the game. It is a complement to the translators work at https://github.com/Ludeon/, until the patches that it introduces will be obsoleted by some future version of RimWorld.
+
+This mod does not add more translation, so you need to get your language translation as complete and as updated as possible. Spanish and Latin America Spanish are supported.
+		
+The mod is also designed to be as independent as possible and does not require any modification or special annotations in the official translation. It should not theoretically interfere with any other mods, it should work on any saved game, and can be activated or deactivated at will. 
+
+The above image is temporary, I am looking for better artwork to illustrate the mod and Spanish culture (submit your proposal :-)
+
+Please check out the features list and feel free to submit suggestions and bug reports on https://github.com/b606/RimWorld-LanguageWorker_Spanish/.
+
+[h3]Features list[/h3]
+[list]
+[*]Fix definite and indefinite articles.
+[*]Fix plurals for single words. The list of exceptions to plurals such as irregular, foreign words, and invariants needs to be updated when needed (WIP). Plurals for compound or hyphenated words is also a WIP (spanih speaking testers needed.)
+[*]Contractions: "de el"⟶"del", "a el"⟶"al".
+[*]Tribal pawns, cities and towns, factions and geographical features get proper uppercase.
+[*]Quest titles get specialized uppercase algorithm (WIP, adapt to the cultural practice).
+[*]Other text post-processing: "de sexo varón"⟶"de sexo masculino", "de sexo mujer"⟶"de sexo femenino". The current RimWorld grammar system does not provide a way to deal with the psychic drones affected gender correctly. 
+[*](*)Epicene animals: the mod defines male only or female only animal labels. As of now, it appends a gender qualification to the generic label, ex. "la rata", "la rata macho" or "el rhinoceros hembra". When the animal is tamed and named, the gender revert back to the physical gender. Please, advise if this behaviour is inappropriate. NB: This is for single animal only, generic animal label (XXX_kindLabel) must be handled correctly in the official translation files.
+[*](*)WIP: XXX_possessive depends on the object (possessed) gender, not the subject (possessor) gender. In French, that was essential. In Spanish, difference should be detected only for plural ("sus") but the patch can do more than that.
+[*]WIP: other elisions can be implemented (the French version has many of them, here spanih speaking testers can ask if more is needed)
+[/list]
+
+[h3]Thanks to[/h3]
+Elevator89 from whom I draw the idea of developing LanguageWorker mods, Pardeike for his fabulous libHarmony patching library, and the testers. The fan-made RimWorld font is from Marnador.
+
+[h1]Download[/h1]
+GitHub : https://github.com/b606/RimWorld-LanguageWorker_Spanish/releases/latest
+
+[h3]Other mods[/h3]
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
+★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2081907934][b]EdB Prepare Carefully [Français][/b][/url]
+Traduction en français de [b]EdB Prepare Carefully[/b].
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081907934
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
+★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2081845369][b]Parlez-vous français ? [LanguageWorker_French Mod][/b][/url]
+Mod optimisant le français dans tout le jeu de RimWorld.
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081845369
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img] 
+★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2286691155][b]Numbers [Français][/b][/url]
+Traduction française du mod [b]Numbers[/b] 
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691155
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
+★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2286691905][b]Numbers Trait AddOn [Français][/b][/url]
+Traduction française du mod [b]Numbers Trait AddOn[/b] 
+Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691905
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
+
+[h3]To encourage me[/h3]
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701581836390/34CBC07D7ED73B6282B3F7AF2E3D47BB462BF9B1/[/img]
+Vote up the mod on SteamWorkshop
+
+[url=https://ko-fi.com/Z8Z51KQ21][img]https://steamuserimages-a.akamaihd.net/ugc/1666857701581884648/E7A2C95176A59BCBE7159C8939B3C975F97B6B01/[/img][/url]
+If you like the mod, support me at https://ko-fi.com/b606at0116
