@@ -34,17 +34,17 @@ namespace RimWorld_LanguageWorker_Spanish
 		static void Postfix(GrammarRequest __result)
 		{
 #if DEBUG
-			LanguageWorker_Spanish.LogMessage("--InspectionPatch called...");
-			LanguageWorker_Spanish.LogMessage("result: " + __result);
+			LanguageWorkerPatcher.LogMessage("--InspectionPatch called...");
+			LanguageWorkerPatcher.LogMessage("result: " + __result);
 			foreach (Rule r in __result.Rules)
 			{
-				LanguageWorker_Spanish.LogMessage(r.ToString());
+				LanguageWorkerPatcher.LogMessage(r.ToString());
 			}
-			LanguageWorker_Spanish.LogMessage("constants: " + __result.Constants);
+			LanguageWorkerPatcher.LogMessage("constants: " + __result.Constants);
 			if (__result.Constants != null)
 			{
 				foreach (var c in __result.Constants)
-					LanguageWorker_Spanish.LogMessage(c.Key + "=" + c.Value);
+					LanguageWorkerPatcher.LogMessage(c.Key + "=" + c.Value);
 			}
 #endif
 		}

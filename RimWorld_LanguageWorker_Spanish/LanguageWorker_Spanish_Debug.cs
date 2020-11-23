@@ -5,11 +5,9 @@
 //	 </summary>
 // </code-header>
 
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
-using System.Text.RegularExpressions;
 using Verse;
 
 namespace RimWorld_LanguageWorker_Spanish

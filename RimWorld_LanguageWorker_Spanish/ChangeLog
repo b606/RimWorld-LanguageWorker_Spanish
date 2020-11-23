@@ -1,5 +1,16 @@
 2020-11-23  b606  <7627533+b606@users.noreply.github.com>
 
+	* Patcher.cs:
+	* InspectionPatch.cs:
+	* RulesForDefPatch.cs:
+	* LanguageWorker_Mod.cs:
+	* RulesForBodyPartRecordPatch.cs:
+	* LanguageWorker_Spanish_Debug.cs: Refactor the general
+	purpose logger LanguageWorker_Spanish.LogMessage(<string>) to
+	be accessed from LanguageWorkerPatcher.LogMessage(<string>). 
+
+2020-11-23  b606  <7627533+b606@users.noreply.github.com>
+
 	* packages.config:
 	* RimWorld_LanguageWorker_Spanish.csproj: Update to libHarmony
 	2.0.4 and NET framework 4.7.2

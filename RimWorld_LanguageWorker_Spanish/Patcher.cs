@@ -10,14 +10,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using HarmonyLib;
-using RimWorld;
 using Verse;
-using Verse.Grammar;
 
 namespace RimWorld_LanguageWorker_Spanish
 {
 	public static class LanguageWorkerPatcher
 	{
+		public static readonly string targetLanguageFamily = "Spanish";
+
 		private static readonly HashSet<string> targetLanguageLSet = new HashSet<string>
 		{
 				"Spanish",
@@ -29,6 +29,16 @@ namespace RimWorld_LanguageWorker_Spanish
 			return targetLanguageLSet.Contains(aLang);
 		}
 
+		public static string GetTargetLanguageFamily()
+		{
+			return targetLanguageFamily;
+		}
+
+		public static void LogMessage(string a_str)
+		{
+			LanguageWorker_Spanish.LogMessage(a_str);
+		}
+
 		public static void DoPatching()
 		{
 #if DEBUG
@@ -36,22 +46,22 @@ namespace RimWorld_LanguageWorker_Spanish
 #endif
 			try
 			{
-				Harmony harmony = new Harmony(id: "com.b606.mods.languageworkerSpanish");
+				Harmony harmony = new Harmony(id: "com.b606.mods.languageworker" + GetTargetLanguageFamily());
 				Assembly assembly = Assembly.GetExecutingAssembly();
 
-				LanguageWorker_Spanish.LogMessage("Installing com.b606.mods.languageworkerSpanish...");
-				LanguageWorker_Spanish.LogMessage(string.Format("Active language: {0}",
+				LogMessage("Installing com.b606.mods.languageworker" + GetTargetLanguageFamily() + "...");
+				LogMessage(string.Format("Active language: {0}",
 					LanguageDatabase.activeLanguage.FriendlyNameEnglish));
 
 				harmony.PatchAll(assembly);
 				InspectPatches(harmony);
 
-				LanguageWorker_Spanish.LogMessage("Done.");
+				LogMessage("Done.");
 			}
 			catch (Exception e)
 			{
-				LanguageWorker_Spanish.LogMessage("Mod installation failed.");
-				LanguageWorker_Spanish.LogMessage(string.Format("Exception: {0}", e));
+				LogMessage("Mod installation failed.");
+				LogMessage(string.Format("Exception: {0}", e));
 			}
 		}
 
@@ -61,7 +71,7 @@ namespace RimWorld_LanguageWorker_Spanish
 		{
 			try
 			{
-				LanguageWorker_Spanish.LogMessage("Existing patches:");
+				LogMessage("Existing patches:");
 
 				IEnumerable<MethodBase> myOriginalMethods = harmony.GetPatchedMethods();
 				foreach (MethodBase method in myOriginalMethods)
@@ -72,20 +82,20 @@ namespace RimWorld_LanguageWorker_Spanish
 						foreach (var patch in patches.Prefixes)
 						{
 							// already patched
-							LanguageWorker_Spanish.LogMessage("index: " + patch.index);
-							LanguageWorker_Spanish.LogMessage("owner: " + patch.owner);
-							LanguageWorker_Spanish.LogMessage("patch method: " + patch.PatchMethod);
-							LanguageWorker_Spanish.LogMessage("priority: " + patch.priority);
-							LanguageWorker_Spanish.LogMessage("before: " + patch.before.Join());
-							LanguageWorker_Spanish.LogMessage("after: " + patch.after.Join());
+							LogMessage("index: " + patch.index);
+							LogMessage("owner: " + patch.owner);
+							LogMessage("patch method: " + patch.PatchMethod);
+							LogMessage("priority: " + patch.priority);
+							LogMessage("before: " + patch.before.Join());
+							LogMessage("after: " + patch.after.Join());
 						}
 					}
 				}
 			}
 			catch (Exception e)
 			{
-				LanguageWorker_Spanish.LogMessage("Patches inspection failed.");
-				LanguageWorker_Spanish.LogMessage(string.Format("Exception: {0}", e));
+				LogMessage("Patches inspection failed.");
+				LogMessage(string.Format("Exception: {0}", e));
 			}
 		}
 	}

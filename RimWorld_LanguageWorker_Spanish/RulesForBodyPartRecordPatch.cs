@@ -35,11 +35,11 @@ namespace RimWorld_LanguageWorker_Spanish
 			__result = LanguageWorker_Spanish.FixRulesForBodyPartRecord(prefix, part);
 
 #if DEBUG
-			LanguageWorker_Spanish.LogMessage("--RulesForBodyPartRecordPrefix called...");
-			LanguageWorker_Spanish.LogMessage("result: " + __result);
+			LanguageWorkerPatcher.LogMessage("--RulesForBodyPartRecordPrefix called...");
+			LanguageWorkerPatcher.LogMessage("result: " + __result);
 			foreach (Rule r in __result)
 			{
-				LanguageWorker_Spanish.LogMessage(r.ToString());
+				LanguageWorkerPatcher.LogMessage(r.ToString());
 			}
 #endif
 			// DO NOT CONTINUE to the original GrammarUtility.RulesforPawn

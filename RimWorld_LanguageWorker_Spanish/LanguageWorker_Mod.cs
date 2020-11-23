@@ -44,14 +44,14 @@ namespace RimWorld_LanguageWorker_Spanish
 			LanguageWorkerPatcher.DoPatching();
 
 			LoadedLanguage active = LanguageDatabase.activeLanguage;
-			LanguageWorker_Spanish.LogMessage("Active: " + active.FriendlyNameEnglish
+			LanguageWorkerPatcher.LogMessage("Active: " + active.FriendlyNameEnglish
 				+ " (" + active.folderName + ") " + active.Worker.GetType());
 
 			foreach (LoadedLanguage l in LanguageDatabase.AllLoadedLanguages)
 			{
 				if (LanguageWorkerPatcher.IsTargetLanguage(l.FriendlyNameEnglish))
 				{
-					LanguageWorker_Spanish.LogMessage("Other: " + l.FriendlyNameEnglish +
+					LanguageWorkerPatcher.LogMessage("Other: " + l.FriendlyNameEnglish +
 						" (" + l.folderName + ") " + l.info.languageWorkerClass);
 				}
 			}
