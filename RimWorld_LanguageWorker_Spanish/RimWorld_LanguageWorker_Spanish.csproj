@@ -9,9 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RimWorld_LanguageWorker_Spanish</RootNamespace>
     <AssemblyName>LanguageWorker_Spanish_Mod</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <ReleaseVersion>1.1.0</ReleaseVersion>
     <ModName>LanguageWorker_Spanish_Mod</ModName>
   </PropertyGroup>
@@ -63,7 +62,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="0Harmony">
-      <HintPath>..\packages\Lib.Harmony.2.0.3\lib\net35\0Harmony.dll</HintPath>
+      <HintPath>..\packages\Lib.Harmony.2.0.4\lib\net472\0Harmony.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

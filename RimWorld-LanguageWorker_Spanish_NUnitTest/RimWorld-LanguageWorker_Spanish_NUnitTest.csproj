@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>RimWorldLanguageWorker_Spanish_NUnitTest</RootNamespace>
     <AssemblyName>RimWorld-LanguageWorker_Spanish_NUnitTest</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <ReleaseVersion>1.1.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
