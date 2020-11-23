@@ -16,28 +16,11 @@ namespace RimWorld_LanguageWorker_Spanish
 {
 	public static class LanguageWorkerPatcher
 	{
-		public static readonly string targetLanguageFamily = "Spanish";
+		public static bool IsTargetLanguage(string aLang) => LanguageWorker_Spanish.IsTargetLanguage(aLang);
 
-		private static readonly HashSet<string> targetLanguageLSet = new HashSet<string>
-		{
-				"Spanish",
-				"Latin American Spanish"
-		};
+		public static string GetTargetLanguageFamily() => LanguageWorker_Spanish.GetTargetLanguageFamily();
 
-		public static bool IsTargetLanguage(string aLang)
-		{
-			return targetLanguageLSet.Contains(aLang);
-		}
-
-		public static string GetTargetLanguageFamily()
-		{
-			return targetLanguageFamily;
-		}
-
-		public static void LogMessage(string a_str)
-		{
-			LanguageWorker_Spanish.LogMessage(a_str);
-		}
+		public static void LogMessage(string a_str) => LanguageWorker_Spanish.LogMessage(a_str);
 
 		public static void DoPatching()
 		{

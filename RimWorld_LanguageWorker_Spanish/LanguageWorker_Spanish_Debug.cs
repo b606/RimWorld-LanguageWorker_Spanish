@@ -14,12 +14,24 @@ namespace RimWorld_LanguageWorker_Spanish
 {
 	public partial class LanguageWorker_Spanish
 	{
+		private static readonly string targetLanguageFamily = "Spanish";
+
+		private static readonly HashSet<string> targetLanguageLSet = new HashSet<string>
+		{
+				"Spanish",
+				"Latin American Spanish"
+		};
+
+		public static bool IsTargetLanguage(string aLang) => targetLanguageLSet.Contains(aLang);
+
+		public static string GetTargetLanguageFamily() => targetLanguageFamily;
+
 		// General purpose logger
-		private static Logger LogLanguageWorker = new Logger("LanguageWorker_Spanish.log");
+		private static Logger LogLanguageWorker = new Logger("LanguageWorker_" + GetTargetLanguageFamily() + ".log");
 
 		// Light weight loggers, for diffs
-		private static Logger logLanguageWorkerIn = new Logger("LanguageWorkerIn_Spanish.log");
-		private static Logger logLanguageWorkerOut = new Logger("LanguageWorkerOut_Spanish.log");
+		private static Logger logLanguageWorkerIn = new Logger("LanguageWorkerIn_" + GetTargetLanguageFamily() + ".log");
+		private static Logger logLanguageWorkerOut = new Logger("LanguageWorkerOut_" + GetTargetLanguageFamily() + ".log");
 
 		// Heavy logger, for stats and CPU usage
 		private static StatsLogger logStats = new StatsLogger();
