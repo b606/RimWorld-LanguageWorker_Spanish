@@ -9,41 +9,9 @@
     <li>1.1</li>
     <li>1.2</li>
   </supportedVersions>
-	<description>LanguageWorker_Spanish Mod mejora las reglas gramaticales y de tipografía específicas del idioma de destino en RimWorld, que son imposibles de implementar sin modificar el código C# incorporado en el juego. Es un complemento al trabajo de los traductores de https://github.com/Ludeon/, hasta que los parches que introduce queden obsoletos para alguna futura versión de RimWorld.
-
-Este mod no añade más traducción, así que necesitas tener la traducción del lenguaje tan completa y actualizada como sea posible. El español y el español de América Latina están soportados.
-
-El mod está también diseñado para ser lo más independiente posible y no requiere ninguna modificación o anotación especial en la traducción oficial. En teoría no debería interferir co​n ningún otro mod, debería funcionar en cualquier juego guardado, y puede ser activado o desactivado a voluntad. 
-
-La imagen de arriba es temporal, estoy buscando mejores obras de arte para ilustrar el mod y la cultura española (envía tu propuesta :-)
-
-Por favor, compruebe la lista de características y siéntase libre de enviar sugerencias e informes de errores en https://github.com/b606/RimWorld-LanguageWorker_Spanish/.
+	<description>LanguageWorker_Spanish Mod mejora las reglas gramaticales y de tipografía específicas del idioma de destino en RimWorld, que son imposibles de implementar sin modificar el código incorporado en el juego. Es un complemento al trabajo de los traductores. El español y el español de América Latina están soportados.
 
 &lt;b&gt;Gracias a&lt;/b&gt;
 Elevator89 de quien saqué la idea de desarrollar los mods de LanguageWorker, Pardeike por su fabulosa biblioteca de parches de LibHarmony, y los probadores. La fuente RimWorld hecha por fans es de Marnador.
-
-&lt;b&gt;Descargar&lt;/b&gt;
-GitHub : https://github.com/b606/RimWorld-LanguageWorker_Spanish/releases/latest
-
-&lt;b&gt;Other mods&lt;/b&gt;
-EdB Prepare Carefully [Français]
-Traduction en français de &lt;b&gt;EdB Prepare Carefully&lt;/b&gt;.
-Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081907934
-
-Parlez-vous français ? [LanguageWorker_French Mod]
-Mod optimisant le français dans tout le jeu de RimWorld.
-Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2081845369
-
-Numbers [Français]
-Traduction française du mod &lt;b&gt;Numbers&lt;/b&gt; 
-Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691155
-
-Numbers Trait AddOn [Français]
-Traduction française du mod &lt;b&gt;Numbers Trait AddOn&lt;/b&gt; 
-Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691905
-
-&lt;b&gt;Para animarme&lt;/b&gt;
-- Vote el mod en SteamWorkshop
-- Si te gusta el mod, apóyame en https://ko-fi.com/b606at0116
 </description>
 </ModMetaData>

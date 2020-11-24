@@ -1,5 +1,5 @@
 [h1]Optimización de las lenguas españolas en RimWorld[/h1]
-
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
 [h3]Descripción[/h3]
 Este mod mejora las reglas gramaticales y de tipografía específicas del idioma de destino en RimWorld, que son imposibles de implementar sin modificar el código C# incorporado en el juego. Es un complemento al trabajo de los traductores de https://github.com/Ludeon/, hasta que los parches que introduce queden obsoletos para alguna futura versión de RimWorld.
 

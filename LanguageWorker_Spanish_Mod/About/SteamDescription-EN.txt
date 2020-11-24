@@ -1,7 +1,6 @@
 [h1]Optimisation of Spanish languages in RimWorld[/h1]
-
+[img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
 [h3]Description[/h3]
-
 This mod improves the grammar and typography rules specific to the target language in RimWorld, which are impossible to implement without modifying the C# code built in the game. It is a complement to the translators work at https://github.com/Ludeon/, until the patches that it introduces will be obsoleted by some future version of RimWorld.
 
 This mod does not add more translation, so you need to get your language translation as complete and as updated as possible. Spanish and Latin America Spanish are supported.
@@ -28,10 +27,10 @@ Please check out the features list and feel free to submit suggestions and bug r
 [h3]Thanks to[/h3]
 Elevator89 from whom I draw the idea of developing LanguageWorker mods, Pardeike for his fabulous libHarmony patching library, and the testers. The fan-made RimWorld font is from Marnador.
 
-[h1]Download[/h1]
+[h3]Download[/h3]
 GitHub : https://github.com/b606/RimWorld-LanguageWorker_Spanish/releases/latest
 
-[h3]Other mods[/h3]
+[h1]Other mods[/h1]
 [img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
 ★ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2081907934][b]EdB Prepare Carefully [Français][/b][/url]
 Traduction en français de [b]EdB Prepare Carefully[/b].
@@ -50,7 +49,7 @@ Traduction française du mod [b]Numbers Trait AddOn[/b]
 Steam : https://steamcommunity.com/sharedfiles/filedetails/?id=2286691905
 [img]https://steamuserimages-a.akamaihd.net/ugc/1666857701582101267/5AD43A56D3DF57812AD1930F926BC8CE30F0287A/[/img]
 
-[h3]To encourage me[/h3]
+[h1]To encourage me[/h1]
 [img]https://steamuserimages-a.akamaihd.net/ugc/1666857701581836390/34CBC07D7ED73B6282B3F7AF2E3D47BB462BF9B1/[/img]
 Vote up the mod on SteamWorkshop
 
