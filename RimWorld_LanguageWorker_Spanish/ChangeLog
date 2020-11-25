@@ -1,3 +1,12 @@
+2020-11-25  b606  <7627533+b606@users.noreply.github.com>
+
+	* LanguageWorker_Spanish.cs: Updated words lists for
+	NonUppercaseWords and DefLabel_InPlural (words tagged as
+	<label> which should be <labelPlural>).
+	Do not overwrite kind.label anymore for epicen animals: might
+	cause bug when more than one languageworker mods are
+	activated.
+
 2020-11-23  b606  <7627533+b606@users.noreply.github.com>
 
 	* Patcher.cs:

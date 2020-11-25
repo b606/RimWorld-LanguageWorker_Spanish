@@ -64,12 +64,13 @@ namespace RimWorld_LanguageWorker_Spanish
 		};
 
 		// TODO: Placeholder for words that do not get elision
-		private static readonly HashSet<string> Exceptions_No_Elision = new HashSet<string> {
+		private static readonly HashSet<string> Exceptions_No_Elision = new HashSet<string>
+		{
 			//"hack",
 			//"holding",
 			//"hunter",
-      //"husky"
-    };
+			//"husky"
+		};
 
 		// List of female epicen animals.
 		// Commented items have xxx_labelMale
@@ -149,14 +150,19 @@ namespace RimWorld_LanguageWorker_Spanish
 		private static HashSet<string> NonUppercaseWords = new HashSet<string>
 		{
 			"a",		// "a la",
+			"al",		// "a la",
 			"de",		// "de la",
 			"del",
-			"la",
+			"e",
 			"el",
+			"en",
+			"la",
+			"o",
 			"por",
 			"post",
 			"van",	// some foreign words
-			"von"
+			"von",
+			"y"
 		};
 
 		// Some labels are usually in plural because of contexts,
@@ -164,29 +170,36 @@ namespace RimWorld_LanguageWorker_Spanish
 		// The list below is used to patch RulesForDef (in FixRulesForDef) and FixRulesForBodyPartRecord (in FixRulesForBodyPartRecord)
 		private static readonly HashSet<string> DefLabel_InPlural = new HashSet<string> {
 		// ThingDef/Races_* tools..label
-			"griffes",
-			"dents",
+			"garras",
+			"dientes",
 			"défenses",
-			"mandibules",
-			"mignonnes petites dents",
-			"crocs acérés",
+			"mandíbulas",
+			"lindos dientecitos",
+			"colmillos",
+			"colmillos venenosos",
 		// BodyPart group
-			"yeux",
+			"brazos",
+			"ojos",
+			"pies",
+			"garras izquierdas frontales",
+			"garras derechas frontales",
+			"manos",
+			"piernas",
+			"hombros",
+			"élitros",
 		// HediffDef
+			"cataratas",
 			"engelures",
-			"taillades",
+			"arañazos de tornado",
 			"artères bouchées",
-			"mécanites fibreuses",
-			"parasites musculaires",
-			"mécanites sensorielles",
-			"vers intestinaux",
+			"mecanitas fibrosas",
+			"parásitos musculares",
+			"mecanitas sensoriales",
+			"lombrices intestinales",
 		//ThingDef
-			"rideaux",
-			"décombres",
-			"sacs de sable éventrés",
-			"débris",
-			"croquettes",
-			"hautes herbes"
+			"cortinas",
+			"escombros",
+			"sacos de arena desperdigados"
 		};
 
 		public override string WithIndefiniteArticle(string str, Gender gender, bool plural = false, bool name = false)
@@ -706,7 +719,7 @@ namespace RimWorld_LanguageWorker_Spanish
 				// Stop pluralization after these words
 				if (NonUppercaseWords.Contains(array[i])
 						|| array[i].StartsWith("d'", StringComparison.CurrentCulture)  // French elision of "de (vowel)" follows the rule for "de"
-						|| array[i].StartsWith("(", StringComparison.CurrentCulture)	 // Start of words in parentheses
+						|| array[i].StartsWith("(", StringComparison.CurrentCulture)   // Start of words in parentheses
 					)
 				{
 					break;
@@ -714,12 +727,12 @@ namespace RimWorld_LanguageWorker_Spanish
 				else
 				{
 					if ((i > 0) && (i < array.Length - 1) &&
-								 																				// French has invariant adverbs listed here, such as "avant", "arrière", "hautement" 
-								 array[i].Equals("non") 								// in the middle ?
-							|| array[i].ToLower().Equals("pem")     	// game specific: IEM (PEM)
-							|| array[i].ToLower().Equals("ia")     		// game specific: AI (IA)
+								 // French has invariant adverbs listed here, such as "avant", "arrière", "hautement" 
+								 array[i].Equals("non")                 // in the middle ?
+							|| array[i].ToLower().Equals("pem")       // game specific: IEM (PEM)
+							|| array[i].ToLower().Equals("ia")        // game specific: AI (IA)
 							|| array[i].ToLower().Equals("luciferium")
-							|| array[i].Equals("-")										// a separator ' - '
+							|| array[i].Equals("-")                   // a separator ' - '
 						)
 					{
 						// invariants: do not change this split.
@@ -857,10 +870,10 @@ namespace RimWorld_LanguageWorker_Spanish
 						}
 
 						// for previous RW version, overwrite kind.label
-						if (!kind.labelFemale.NullOrEmpty())
-						{
-							kind.label = kind.labelFemale;
-						}
+						//if (!kind.labelFemale.NullOrEmpty())
+						//{
+						//	kind.label = kind.labelFemale;
+						//}
 						break;
 					case Gender.Male:
 						if (PawnKind_FemaleOnly.Contains(kind.defName))
@@ -879,10 +892,10 @@ namespace RimWorld_LanguageWorker_Spanish
 						}
 
 						// for previous RW version, overwrite kind.label
-						if (!kind.labelMale.NullOrEmpty())
-						{
-							kind.label = kind.labelMale;
-						}
+						//if (!kind.labelMale.NullOrEmpty())
+						//{
+						//	kind.label = kind.labelMale;
+						//}
 						break;
 					case Gender.None:
 						// the grammar uses male as default neuter gender
