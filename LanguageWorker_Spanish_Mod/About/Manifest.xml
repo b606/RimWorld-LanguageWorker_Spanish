@@ -6,6 +6,6 @@
         <li>LanguageWorker_French_Mod</li>
     </incompatibleWith>
   <showCrossPromotions>true</showCrossPromotions>
-  <manifestUri>https://github.com/b606/RimWorld-LanguageWorker_Spanish/raw/main/About/Manifest.xml</manifestUri>
+  <manifestUri>https://github.com/b606/RimWorld-LanguageWorker_Spanish/raw/main/LanguageWorker_Spanish_Mod/About/Manifest.xml</manifestUri>
   <downloadUri>https://github.com/b606/RimWorld-LanguageWorker_Spanish/releases/latest</downloadUri>
 </Manifest>
