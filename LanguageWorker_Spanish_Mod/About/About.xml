@@ -14,4 +14,7 @@
 &lt;b&gt;Gracias a&lt;/b&gt;
 Elevator89 de quien saqué la idea de desarrollar los mods de LanguageWorker, Pardeike por su fabulosa biblioteca de parches de LibHarmony, y los probadores. La fuente RimWorld hecha por fans es de Marnador.
 </description>
+  <incompatibleWith>
+    <li>b606.LanguageWorkerFrench.Mod</li>
+  </incompatibleWith>
 </ModMetaData>
