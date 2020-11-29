@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
-  <identifier>LanguageWorker_Spanish_Mod</identifier>
+  <identifier>b606.LanguageWorkerSpanish.Mod</identifier>
   <version>1.2.0</version>
     <incompatibleWith>
-        <li>LanguageWorker_French_Mod</li>
+        <li>b606.LanguageWorkerFrench.Mod</li>
     </incompatibleWith>
   <showCrossPromotions>true</showCrossPromotions>
   <manifestUri>https://github.com/b606/RimWorld-LanguageWorker_Spanish/raw/main/LanguageWorker_Spanish_Mod/About/Manifest.xml</manifestUri>
