@@ -1,3 +1,10 @@
+2020-11-29  b606  <7627533+b606@users.noreply.github.com>
+
+	* LanguageWorker_Spanish.cs: Fix: Add NullOrEmpty tests for
+	string. Fix bug with UI editbox with empty string.
+
+
+
 2020-11-25  b606  <7627533+b606@users.noreply.github.com>
 
 	* LanguageWorker_Spanish.cs: Updated words lists for

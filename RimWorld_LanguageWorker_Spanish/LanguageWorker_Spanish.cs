@@ -204,6 +204,9 @@ namespace RimWorld_LanguageWorker_Spanish
 
 		public override string WithIndefiniteArticle(string str, Gender gender, bool plural = false, bool name = false)
 		{
+			if (str.NullOrEmpty())
+				return str;
+
 			//Names don't get articles
 			if (name)
 				return str;
@@ -547,6 +550,9 @@ namespace RimWorld_LanguageWorker_Spanish
 		/// <param name="count">int.</param>
 		private string PluralizeOneWord(string str, Gender gender, int count = -1)
 		{
+			if (str.NullOrEmpty())
+				return str;
+
 			string item = str.ToLower();
 			string str_pluralized = str;
 
@@ -641,6 +647,9 @@ namespace RimWorld_LanguageWorker_Spanish
 		/// </summary>
 		private string PluralizeHyphenated(string str, Gender gender, int count = -1)
 		{
+			if (str.NullOrEmpty())
+				return str;
+
 			string[] array = str.Split('-');
 			if (array.NullOrEmpty())
 				return str;
@@ -813,6 +822,8 @@ namespace RimWorld_LanguageWorker_Spanish
 		/// </summary>
 		private static string PostProcessedLanguageGrammar(string str)
 		{
+			if (str.NullOrEmpty())
+				return str;
 
 			str = DeEl.Replace(str, "$1el $2");
 			str = AEl.Replace(str, "$1l $2");
